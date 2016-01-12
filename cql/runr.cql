@@ -23,3 +23,19 @@ CREATE TABLE runr.position (
     location int,
     PRIMARY KEY (runner_id, base_speed)
 );
+
+CREATE TABLE runr.points_by_distance (
+    location_id bigint PRIMARY KEY,
+    altitude_meters double,
+    distance_meters double,
+    latitude_degrees double,
+    longitude_degrees double
+);
+
+CREATE TABLE runr.track_points(
+    location_id	int PRIMARY KEY,
+    latitude_degrees double,
+    longitude_degrees double,
+    altitude_meters double,
+    distance_meters double
+);
