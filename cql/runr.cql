@@ -14,14 +14,27 @@ CREATE TABLE runr.runners (
     weight int,
     height int,
     base_speed double,
+    lat_lng text,
+
     PRIMARY KEY (runner_id, base_speed)
 );
 
 CREATE TABLE runr.position (
     runner_id text,
     base_speed double,
-    location int,
+    location bigint,
+    location_exact double,
+    tick int,
+    starting_position int,
     PRIMARY KEY (runner_id, base_speed)
+);
+
+CREATE TABLE runr.trackpoints(
+    location_id	int primary key,
+    altitude_meters double,
+    distance_meters double,
+    latitude_degrees double,
+    longitude_degrees double
 );
 
 CREATE TABLE runr.points_by_distance (
@@ -30,12 +43,4 @@ CREATE TABLE runr.points_by_distance (
     distance_meters double,
     latitude_degrees double,
     longitude_degrees double
-);
-
-CREATE TABLE runr.track_points(
-    location_id	int PRIMARY KEY,
-    latitude_degrees double,
-    longitude_degrees double,
-    altitude_meters double,
-    distance_meters double
 );

@@ -20,6 +20,6 @@ def start():
     init_cassandra(app.config['DSE_CLUSTER'].split(','), app.config['DSE_KEYSPACE'], app.config['DSE_SOLR_DC'])
 
     app.run(host='0.0.0.0',
-            port=5000,
+            port=5002,
             use_reloader=True,
             threaded=True)

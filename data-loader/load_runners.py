@@ -10,11 +10,13 @@ truncate_runners = session.prepare('''
 ''')
 
 session.execute(truncate_runners)
-
+print("Loading Runners")
 with open('runner_stats_final.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
+    i = 0
     for row in reader:
         if row[10] != 'NaN' and row[11] != 'NaN' and row[12] != 'NaN':
+            print("Loading row {}".format(row[0]))
             runner = {
                     "runner_id":row[0],
                     "first_name":row[1],
@@ -37,18 +39,21 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
                 VALUES
                     (?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''')
-
+            session.execute(insert_runner.bind(runner))
             position = {
                     "runner_id":row[0],
                     "base_speed":Decimal(row[12]),
                     "location": 0,
+                    "location_exact": 0,
+                    "tick": 0,
+                    "starting_position": i/100,
                 }
 
             initialize_runner_position = session.prepare('''
                 INSERT INTO runr.position
-                    (runner_id, base_speed, location)
+                    (runner_id, base_speed, location, location_exact, tick, starting_position)
                 VALUES
-                    (?,?,?)
+                    (?,?,?,?,?,?)
             ''')
-
+            i += 1
             session.execute(initialize_runner_position.bind(position))
