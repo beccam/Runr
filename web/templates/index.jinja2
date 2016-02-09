@@ -3,16 +3,209 @@
 {% block body %}
 
 <style type="text/css">
-    html, body { height: 100%; margin: 0; padding: 0; }
-    #map { height: 100%; }
+    html, body, .row {height:100%; width:100%; margin: 0; }
+    .container {height:100%;  width:100%;margin: 0}
+    .body{
+        padding-top:45px;
+    }
+
+    .google-wrapper {
+        position: relative;
+        height:100%;
+    }
+
+    #google-map {
+        height:100%;
+{#        position:absolute;#}
+    }
+    #google-map-overlay:hover{
+        opacity: 1;
+    }
+    #google-map-overlay {
+        pointer-events:none;
+        height:100%;
+        width:100%;
+        padding-top:60px;
+        position: absolute;
+
+        opacity: 0.5;
+        top: 0px;
+        left: 0px;
+        z-index: 2;
+    }
+    .nav {
+        background-color:#007E96;
+        height:45px;
+        width:100%;
+        border-radius:0px;
+        border:0px;
+        margin-bottom:0px;
+        position: absolute;
+        z-index: 3;
+
+    }
+    .labels {
+      color: white;
+      font-family: "Lucida Grande", "Arial", sans-serif;
+      font-weight: bold;
+      font-size: 10px;
+      text-align: center;
+      width: 30px;
+      white-space: nowrap;
+    }
 </style>
 
  <body>
- <nav style="background-color:#007E96; height:45px; border-radius:0px; border:0px;margin-bottom:0px" class="navbar navbar-default" >
+<nav class=" navbar navbar-default nav">
+    <div class="container-fluid" style="padding-top:7px">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5" style="padding:3px">
+                <b style="color:white; font-size:1.5em">00:34:44</b>
+            </div>
+            <div class="col-md-2 col-md-offset-3">
+                <div class="form-group has-feedback ">
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    <input type="text" class="form-control" placeholder="Search by Name, Bib #"/>
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
-    <div id="map"></div>
+{#<div class="body">#}
+{#    <div class="container">#}
+{#            <div class="col-md-6" >#}
+{#                Hi#}
+        {#            <div id="google-map" ></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<div class="google-wrapper body">
+{#    <div class="row">#}
+{#        <div class="col-md-3" style="height:100%">#}
+{#            Hi#}
+{#    border-color:#007E96; border-width:1px; border-style:solid;#}
+        <div id="google-map" ></div>
+        <div id="google-map-overlay">
+            <div class="container">
+                <div class="row">
+                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 col-md-offset-10">
+                        <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
+                        <div style="float:left; padding:10px; padding-bottom:0px">
+                            <b style="color:white">Phil Bayliss</b>
+                            </br>
+                            <div style="color:white">Age: Undefined</div>
+                            <div style="color:white">Weight: Undefined</div>
 
+                        </div>
+                        <div style="float:left; padding:10px; color:white">
+                            <div style="color:white">Average Speed: 50km/s</div>
+                            <div style="color:white">Projected Finish: 50th</div>
+                            <div style="color:white">Projected Time to Finish: 1:45:43</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{##}
+            {#        <div class="container">#}
+
+{#</div>#}
+{#        #}
+{#            <div class="col-md-1" style="background-color:#ffffff;">Hi</div>#}
+{#        </div>#}
     <script>
+        var markers = []
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('google-map'), {
+                zoom: 14,
+                center: {lat: 40.621906, lng: -74.032435},
+                streetViewControl: false,
+                mapTypeControl: false,
+
+            });
+
+            google.maps.event.addListener(map, 'idle', function() {
+
+{#                console.log(google.maps.geometry.spherical.computeDistanceBetween (map.getBounds().getNorthEast(),map.getBounds().getSouthWest()) / 1000);#}
+
+{#                console.log(map.getBounds().getSouthWest().lat() + "," + map.getBounds().getSouthWest().lng());#}
+{#                console.log(map.getBounds().getNorthEast().lat() + "," + map.getBounds().getNorthEast().lng());#}
+
+                $.ajax({
+                    url:'/geospatial_clustering',
+                    data:{
+                        screenWidth: $("#google-map").width(),
+                        screenHeight: $("#google-map").height(),
+                        latitudeStart: map.getBounds().getNorthEast().lat(),
+                        longitudeStart: map.getBounds().getSouthWest().lng(),
+                        latitudeDistance: map.getBounds().getSouthWest().lat() - map.getBounds().getNorthEast().lat(),
+                        longitudeDistance: map.getBounds().getSouthWest().lng() - map.getBounds().getNorthEast().lng()
+                    },
+                    success: function(data)
+                    {
+                        for(var i = 0; i < markers.length; i++)
+                        {
+                            markers[i].setMap(null)
+                            markers = []
+                        }
+                        JSON.parse(data).forEach(function(box)
+                        {
+                            if(box.count > 0) {
+                                var countLatLng = {lat: box.latitude, lng: box.longitude};
+                                var marker = new MarkerWithLabel({
+                                    position: countLatLng,
+                                    map: map,
+                                    labelContent: box.count.toString(),
+                                    labelAnchor: new google.maps.Point(15, 7),
+                                    labelClass: "labels", // the CSS class for the label
+                                    labelInBackground: false,
+                                    icon: pinSymbol('#383838')
+                                  });
+{#                                var countCircle = new google.maps.Circle({#}
+{#                                  strokeColor: '#4D4D4D',#}
+{#                                  strokeOpacity:.5,#}
+{#                                  fillColor: '#292929',#}
+{#                                  fillOpacity:.8,#}
+{#                                  map: map,#}
+{#                                  center: countLatLng,#}
+{#                                  radius: 50#}
+{#                                });#}
+{#                                var marker = new google.maps.Marker({#}
+{#                                    position: countLatLng,#}
+{#                                    map: map,#}
+{#                                    icon: {#}
+{#                                      path: google.maps.SymbolPath.CIRCLE,#}
+{#                                      scale: 10#}
+{#                                    },#}
+{#                                    title: box.count.toString(),#}
+{#                                });#}
+                                markers.push(marker)
+                            }
+                        });
+                    }
+                })
+
+            });
+        }
+        function pinSymbol(color) {
+          return {
+            path:  google.maps.SymbolPath.CIRCLE ,
+            fillColor: color,
+            fillOpacity: 1,
+            strokeColor: '#000',
+            strokeWeight: 2,
+            scale: 20
+          };
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuNqpFE8a9dKuIINC91jdzd0IWJ1js-bw&callback=initMap&libraries=geometry"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
+</body>
+{% endblock %}
+
 {#        mapMarkers = []#}
 {#        usedMapMarkers = []#}
 {#        map;#}
@@ -78,18 +271,3 @@
 {#            });#}
 {#        }#}
 {##}
-{#        function initMap() {#}
-{#            map = new google.maps.Map(document.getElementById('map'), {#}
-{#                zoom: 4,#}
-{#                center: {lat: -33, lng: 151}#}
-{#            });#}
-{#        }#}
-{#        setInterval(drawMarkers, 1000);#}
-
-    </script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuNqpFE8a9dKuIINC91jdzd0IWJ1js-bw&callback=initMap"></script>
-    <script src="/static/js/markerAnimate.js"></script>
-    <script src="/static/js/SlidingMarker.min.js"></script>
-</body>
-{% endblock %}

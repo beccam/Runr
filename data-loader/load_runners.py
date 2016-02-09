@@ -14,6 +14,7 @@ print("Loading Runners")
 with open('runner_stats_final.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     i = 0
+
     for row in reader:
         if row[10] != 'NaN' and row[11] != 'NaN' and row[12] != 'NaN':
             print("Loading row {}".format(row[0]))
@@ -43,17 +44,19 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
             position = {
                     "runner_id":row[0],
                     "base_speed":Decimal(row[12]),
+                    "lat_lng": "40.61572,-74.03123",
                     "location": 0,
                     "location_exact": 0,
-                    "tick": 0,
                     "starting_position": i/100,
                 }
 
             initialize_runner_position = session.prepare('''
                 INSERT INTO runr.position
-                    (runner_id, base_speed, location, location_exact, tick, starting_position)
+                    (runner_id, base_speed, lat_lng, location, location_exact, starting_position)
                 VALUES
-                    (?,?,?,?,?,?)
+                    (?,?,?,?,?, ?)
             ''')
             i += 1
+
+
             session.execute(initialize_runner_position.bind(position))

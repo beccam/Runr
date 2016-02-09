@@ -14,9 +14,14 @@ CREATE TABLE runr.runners (
     weight int,
     height int,
     base_speed double,
-    lat_lng text,
 
     PRIMARY KEY (runner_id, base_speed)
+);
+
+CREATE TABLE runr.time_elapsed (
+    counter_name text,
+    time_elapsed counter,
+    PRIMARY KEY (counter_name)
 );
 
 CREATE TABLE runr.position (
@@ -24,8 +29,8 @@ CREATE TABLE runr.position (
     base_speed double,
     location bigint,
     location_exact double,
-    tick int,
     starting_position int,
+    lat_lng text,
     PRIMARY KEY (runner_id, base_speed)
 );
 

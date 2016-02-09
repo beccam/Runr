@@ -22,6 +22,55 @@ prepared_statements = None
 @index_api.route('/')
 def index():
     return render_template('index.jinja2')
+@index_api.route('/geospatial_clustering')
+def geospatial_clustering():
+    screenWidth = float(request.args.get('screenWidth'))
+    screenHeight = float(request.args.get('screenHeight'))
+    latitudeStart = float(request.args.get('latitudeStart'))
+    longitudeStart = float(request.args.get('longitudeStart'))
+    latitudeDistance = float(request.args.get('latitudeDistance'))
+    longitudeDistance = float(request.args.get('longitudeDistance'))
+
+    latPerPx = latitudeDistance / screenHeight
+    longPerPx = longitudeDistance / screenWidth
+
+    # Maximum size for the square
+    minSize = min(screenWidth, screenHeight)
+    # Create 16 square grid
+    squareSize = minSize / 4
+    # 1920 - 1080 /2 = Right and Left Offset (Start of Grid)
+    offset = ((max(screenWidth, screenHeight) - minSize) / 2)
+
+    clusters = []
+    if screenWidth > screenHeight:
+        for i in range(0,4):
+            for j in range(0,4):
+                # Start of Grid + Completed Squares
+                latOffset = ((i * squareSize)) * latPerPx
+                longOffset = abs((offset + (j * squareSize)) * longPerPx)
+
+                # Current Square + Half the Distance = center of square
+                squareLat = latitudeStart + (latOffset + ((squareSize / 2) * latPerPx))
+                squareLong = longitudeStart + (longOffset + ((squareSize / 2) * longPerPx))
+                if squareLong >= 180:
+                    squareLong -= 180
+                    squareLong *= -1
+                elif squareLong <= -180:
+                    squareLong += 180
+                    squareLong *= -1
+
+                if squareLat <= -90:
+                    squareLat += 90
+                    squareLat *= -1
+                elif squareLat >= 90:
+                    squareLat -= 90
+                    squareLat *= -1
+
+                squareDistance = abs((squareSize / 2) * latPerPx)
+                solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(squareLat) + ',' + str(squareLong) + ' d=' + str(squareDistance * 110.574) + '}"}'
+                geoCount = cassandra_helper.session.execute("select count(*) from runr.position where solr_query='" + solrParams + "'")
+                clusters.append({"latitude":squareLat, "longitude":squareLong, "count":geoCount.current_rows[0]["count"]})
+    return json.dumps(clusters)
 
 @index_api.route('/get_unique_runner_positions')
 def get_unique_runner_positions():
