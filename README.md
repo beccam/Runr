@@ -25,7 +25,7 @@ cd ../web
 ./run
 ```
 
-Build and start the submit the spark job
+Build and submit the spark job
 ```
 cd ../calculate-position
 sbt package
