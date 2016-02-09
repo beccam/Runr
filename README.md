@@ -1,10 +1,5 @@
 # Runr Demo
 
-Navigate to the cql folder
-```
-
-```
-
 Load the schema
 ```
 cd ../cql
