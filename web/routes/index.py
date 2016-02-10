@@ -23,6 +23,15 @@ prepared_statements = None
 def index():
     return render_template('index.jinja2')
 
+@index_api.route('/get_timer_tick')
+def get_timer_tick():
+    get_timer_counter = cassandra_helper.session.prepare('''
+    SELECT * FROM runr.time_elapsed
+    WHERE counter_name='time_elapsed'
+    ''')
+    return json.dumps(cassandra_helper.session.execute(get_timer_counter)[0]["time_elapsed"])
+
+
 @index_api.route('/get_route_coordinates')
 def get_route_coordinates():
     get_route_coordinates = cassandra_helper.session.prepare('''
@@ -32,17 +41,18 @@ def get_route_coordinates():
     coordinates = cassandra_helper.session.execute(get_route_coordinates)
 
     sorted_coordinates = []
-    sorted_coordinates.append({
-                    "location_id": coordinates[0]["location_id"],
-                    "lat": coordinates[0]["latitude_degrees"],
-                    "lng": coordinates[0]["longitude_degrees"]})
+    # sorted_coordinates.append({
+    #                 "location_id": coordinates[0]["location_id"],
+    #                 "lat": coordinates[0]["latitude_degrees"],
+    #                 "lng": coordinates[0]["longitude_degrees"]})
     i = 1
     for row in coordinates:
-        if i % 10 == 0:
+        if i % 10 == 0 or i == 0:
             sorted_coordinates.append({
                 "location_id": row["location_id"],
                 "lat": row["latitude_degrees"],
                 "lng": row["longitude_degrees"]})
+
         i += 1
         # for j in range(0, len(sorted_coordinates)):
         #     if int(row["location_id"]) > int(sorted_coordinates[j]["location_id"]):
@@ -102,11 +112,12 @@ def geospatial_clustering():
                 squareDistance = abs((squareSize / 2) * latPerPx)
                 solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(squareLat) + ',' + str(squareLong) + ' d=' + str(squareDistance * 110.574) + '}"}'
                 geoCount = cassandra_helper.session.execute("select count(*) from runr.position where solr_query='" + solrParams + "'")
-                clusters.append({"latitude":squareLat, "longitude":squareLong, "count":geoCount.current_rows[0]["count"]})
+                clusters.append({"latitude":squareLat, "longitude":squareLong, "count":geoCount[0]["count"]})
     return json.dumps(clusters)
 
 @index_api.route('/get_unique_runner_positions')
 def get_unique_runner_positions():
+
     session = cassandra_helper.session
     get_distinct_positions = session.prepare('''
         SELECT *

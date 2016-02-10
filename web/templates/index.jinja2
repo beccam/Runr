@@ -121,6 +121,14 @@
 {#        </div>#}
     <script>
 
+        $.ajax({
+            'url': '/get_timer_tick',
+            success:function(data)
+            {
+                console.log(data)
+            }
+        })
+
         var markers = []
         function initMap() {
             map = new google.maps.Map(document.getElementById('google-map'), {

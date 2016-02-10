@@ -2,70 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27def7c0-5119-4610-9186-c408168af5ca" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$4909bb381b7f9f83f1d4$$anonfun$$sbtdef$1$$anonfun$apply$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$4909bb381b7f9f83f1d4$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$4909bb381b7f9f83f1d4$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$4909bb381b7f9f83f1d4.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$4909bb381b7f9f83f1d4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$90f983ddec8635289afd$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$90f983ddec8635289afd$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$90f983ddec8635289afd.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$90f983ddec8635289afd.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$ccae70f1002e88b8360d$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$ccae70f1002e88b8360d$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$ccae70f1002e88b8360d.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/project/target/config-classes/$ccae70f1002e88b8360d.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$.class" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/input_dsp" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/input_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/.idea/workspace.xml" afterPath="$PROJECT_DIR$/calculate-position/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/default/calculate-position-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/default/calculate-position-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/default/calculate-position-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/default/calculate-position-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-compile-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-compile-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-compile.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-compile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-docs.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-docs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-optional.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-optional.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-plugin.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-pom.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-provided.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-provided.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-runtime-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-runtime.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-scala-tool.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-scala-tool.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-sources.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-sources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-test-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-test-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-test.xml" afterPath="$PROJECT_DIR$/calculate-position/project/target/resolution-cache/reports/default-calculate-position-build-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/ivyConfiguration/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/$global/update/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/compile/compileIncremental/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/project/target/streams/compile/copyResources/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/project/target/streams/compile/copyResources/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala" afterPath="$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/default/calculate-position_2.10/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/default/calculate-position_2.10/1.0/resolved.xml.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/default/calculate-position_2.10/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/default/calculate-position_2.10/1.0/resolved.xml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-compile-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-compile-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-compile.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-compile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-docs.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-docs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-optional.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-optional.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-plugin.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-pom.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-provided.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-provided.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-runtime-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-runtime-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-runtime.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-scala-tool.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-scala-tool.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-sources.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-sources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-test-internal.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-test-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-test.xml" afterPath="$PROJECT_DIR$/calculate-position/target/resolution-cache/reports/default-calculate-position_2.10-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/ivyConfiguration/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/calculate-position/target/streams/$global/update/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/calculate-position/target/streams/compile/externalDependencyClasspath/$global/streams/export" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/streams/compile/managedClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/calculate-position/target/streams/compile/managedClasspath/$global/streams/export" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cql/runr.cql" afterPath="$PROJECT_DIR$/cql/runr.cql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/index.py" afterPath="$PROJECT_DIR$/web/routes/index.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/index.jinja2" afterPath="$PROJECT_DIR$/web/templates/index.jinja2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/index.py" afterPath="$PROJECT_DIR$/web/routes/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Runr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +18,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Runr$Runr_Web.coverage" NAME="Runr Web Coverage Results" MODIFIED="1455063056937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/Runr$Runner_Loader.coverage" NAME="Runner Loader Coverage Results" MODIFIED="1455060400625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
+    <SUITE FILE_PATH="coverage/Runr$Runr_Web.coverage" NAME="Runr Web Coverage Results" MODIFIED="1455070765550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/Runr$Position_Loader.coverage" NAME="Position Loader Coverage Results" MODIFIED="1455053150890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -98,45 +37,30 @@
     <favorites_list name="Runr" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jinja2" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="index.jinja2" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.0">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-              <folding>
-                <element signature="e#1198#1221#0#HTML" expanded="true" />
-                <element signature="e#1305#1362#0#HTML" expanded="true" />
-                <element signature="e#1465#1484#0#HTML" expanded="true" />
-                <element signature="e#1505#1541#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1476" column="0" selection-start-line="1476" selection-start-column="0" selection-end-line="1476" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.48809522">
+              <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/routes/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.030050084">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.214286">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-                <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-                <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-                <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-                <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-                <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+                <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+                <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+                <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+                <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+                <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+                <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
               </folding>
             </state>
           </provider>
@@ -164,9 +88,12 @@
       </file>
       <file leaf-file-name="runr.cql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cql/runr.cql">
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.372093">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -223,8 +150,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cql/runr.cql" />
-        <option value="$PROJECT_DIR$/web/routes/index.py" />
         <option value="$PROJECT_DIR$/web/templates/index.jinja2" />
+        <option value="$PROJECT_DIR$/web/routes/index.py" />
       </list>
     </option>
   </component>
@@ -233,11 +160,14 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="x" value="-1" />
+    <option name="y" value="55" />
+    <option name="width" value="2162" />
+    <option name="height" value="1386" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -260,18 +190,24 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Runr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -387,16 +323,6 @@
               <option name="myItemId" value="Runr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Runr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Runr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -416,14 +342,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calculate-position" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Demo-Portal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -433,17 +391,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Runr Web">
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -518,12 +465,7 @@
       <gulpfile />
       <tasks />
       <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
+      <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
     </configuration>
@@ -711,27 +653,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="-1" y="55" width="2162" height="1386" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27635783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31995663" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27592593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3195122" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39756098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -747,14 +690,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/web/routes/index.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -793,23 +729,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
+    <entry file="file://$PROJECT_DIR$/data-loader/load_data.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py">
+    <entry file="file://$PROJECT_DIR$/web/helpers/cassandra_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1818" column="0" selection-start-line="1818" selection-start-column="0" selection-end-line="1818" selection-end-column="0" />
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/base.jinja2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -820,12 +777,12 @@
           <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
@@ -868,19 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1818" column="0" selection-start-line="1818" selection-start-column="0" selection-end-line="1818" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -891,12 +835,12 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
@@ -939,19 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1818" column="0" selection-start-line="1818" selection-start-column="0" selection-end-line="1818" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -962,12 +893,12 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
@@ -1010,12 +941,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,12 +951,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
@@ -1065,12 +991,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,12 +1001,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
@@ -1120,12 +1041,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,12 +1057,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,12 +1073,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,26 +1118,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cql/runr.cql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1476" column="0" selection-start-line="1476" selection-start-column="0" selection-end-line="1476" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydev_monkey_qt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cql/runr.cql">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.372093">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1244,32 +1145,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
+    <entry file="file://$PROJECT_DIR$/web/routes/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state vertical-scroll-proportion="-5.214286">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#1198#1221#0#HTML" expanded="true" />
-            <element signature="e#1305#1362#0#HTML" expanded="true" />
-            <element signature="e#1465#1484#0#HTML" expanded="true" />
-            <element signature="e#1505#1541#0#HTML" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
+            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
+            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
+            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
+            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/routes/index.py">
+    <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.030050084">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455059604774" expanded="true" signature="757:849" placeholder="SELECT locat... points_by_distance" />
-            <marker date="1455059604774" expanded="true" signature="3988:4040" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4060" placeholder="select count... position" />
-            <marker date="1455059604774" expanded="true" signature="3988:4062" placeholder="select * fro... position" />
-            <marker date="1455059604774" expanded="true" signature="4399:4434" placeholder="SELECT * FRO... position" />
-            <marker date="1455059604774" expanded="true" signature="4857:4983" placeholder="SELECT latit... points_by_distance" />
-          </folding>
+        <state vertical-scroll-proportion="0.48809522">
+          <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
