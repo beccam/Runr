@@ -52,16 +52,15 @@ object position_calculator {
   def update_position(x: CassandraRow, gps_locations: Array[CassandraRow], tick: Int) : CassandraRow =
   {
     var position_adjustment = (x.getInt("base_speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
-    if (tick >= x.getInt("starting_position")) {
-      var location = gps_locations((x.getInt("location_exact") + position_adjustment).toInt)
-      var updated_position = new CassandraRow(Array("runner_id", "base_speed", "location", "location_exact", "lat_lng"),
-        Array(x.getString("runner_id"),
-          x.getDecimal("base_speed").toString(),
-          (x.getInt("location_exact") + position_adjustment).toInt.toString(),
-          (x.getDouble("location_exact") + position_adjustment).toString(),
-          (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees"))))
-      return updated_position;
-
+    if (tick >= x.getInt("starting_position") && (x.getInt("location_exact") + position_adjustment).toInt < gps_locations.length) {
+        var location = gps_locations((x.getInt("location_exact") + position_adjustment).toInt)
+        var updated_position = new CassandraRow(Array("runner_id", "base_speed", "location", "location_exact", "lat_lng"),
+          Array(x.getString("runner_id"),
+            x.getDecimal("base_speed").toString(),
+            (x.getInt("location_exact") + position_adjustment).toInt.toString(),
+            (x.getDouble("location_exact") + position_adjustment).toString(),
+            (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees"))))
+        return updated_position;
     }
     else
     {
@@ -71,7 +70,7 @@ object position_calculator {
           x.getDecimal("base_speed").toString(),
           (x.getInt("location_exact")).toString(),
           (x.getDouble("location_exact")).toString(),
-          ""))
+          (x.getString("lat_lng"))))
       return updated_position;
     }
   }

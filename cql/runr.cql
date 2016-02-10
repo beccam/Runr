@@ -47,5 +47,5 @@ CREATE TABLE runr.points_by_distance (
     altitude_meters double,
     distance_meters double,
     latitude_degrees double,
-    longitude_degrees double
+    longitude_degrees double,
 );

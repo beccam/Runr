@@ -34,7 +34,7 @@
         z-index: 2;
     }
     .nav {
-        background-color:#007E96;
+        background-color:#FCFCFC;
         height:45px;
         width:100%;
         border-radius:0px;
@@ -59,8 +59,11 @@
 <nav class=" navbar navbar-default nav">
     <div class="container-fluid" style="padding-top:7px">
         <div class="row">
-            <div class="col-md-2 col-md-offset-5" style="padding:3px">
-                <b style="color:white; font-size:1.5em">00:34:44</b>
+            <div class="col-md-1">
+                <img style="height:35px; margin-left: -10px; margin-top:-2px;" src="static/img/Runr_logo.png"/>
+            </div>
+            <div class="col-md-2 col-md-offset-4" style="padding:3px">
+                <b style="color:black; font-size:1.5em">00:34:44</b>
             </div>
             <div class="col-md-2 col-md-offset-3">
                 <div class="form-group has-feedback ">
@@ -117,16 +120,50 @@
 {#            <div class="col-md-1" style="background-color:#ffffff;">Hi</div>#}
 {#        </div>#}
     <script>
+
         var markers = []
         function initMap() {
             map = new google.maps.Map(document.getElementById('google-map'), {
-                zoom: 14,
+                zoom: 12,
                 center: {lat: 40.621906, lng: -74.032435},
                 streetViewControl: false,
                 mapTypeControl: false,
 
             });
+            $.ajax({
+                url:'/get_route_coordinates',
+                success:function(data)
+                {
+                    polyLineCoordinates = []
+                    JSON.parse(data).forEach(function(route_cords) {
+                        if(polyLineCoordinates.length == 0) {
+                            polyLineCoordinates.push(route_cords);
+                        }
+                        for(var i = 0; i < polyLineCoordinates.length; i++)
+                        {
 
+                            if(polyLineCoordinates[i].location_id > route_cords.location_id)
+                            {
+                                polyLineCoordinates.splice(i, 0, route_cords);
+                                break;
+                            }
+                            else if(i == polyLineCoordinates.length -1 && polyLineCoordinates[i].location_id < route_cords.location_id)
+                            {
+                                polyLineCoordinates.push(route_cords);
+                            }
+                        }
+                    });
+                    var path = new google.maps.Polyline({
+                        path: polyLineCoordinates,
+                        geodesic: true,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2
+                    });
+
+                    path.setMap(map);
+                }
+            })
             google.maps.event.addListener(map, 'idle', function() {
 
 {#                console.log(google.maps.geometry.spherical.computeDistanceBetween (map.getBounds().getNorthEast(),map.getBounds().getSouthWest()) / 1000);#}
@@ -146,16 +183,12 @@
                     },
                     success: function(data)
                     {
-                        for(var i = 0; i < markers.length; i++)
-                        {
-                            markers[i].setMap(null)
-                            markers = []
-                        }
+                        clearMarkers();
                         JSON.parse(data).forEach(function(box)
                         {
                             if(box.count > 0) {
                                 var countLatLng = {lat: box.latitude, lng: box.longitude};
-                                var marker = new MarkerWithLabel({
+                                markers.push(new MarkerWithLabel({
                                     position: countLatLng,
                                     map: map,
                                     labelContent: box.count.toString(),
@@ -163,32 +196,23 @@
                                     labelClass: "labels", // the CSS class for the label
                                     labelInBackground: false,
                                     icon: pinSymbol('#383838')
-                                  });
-{#                                var countCircle = new google.maps.Circle({#}
-{#                                  strokeColor: '#4D4D4D',#}
-{#                                  strokeOpacity:.5,#}
-{#                                  fillColor: '#292929',#}
-{#                                  fillOpacity:.8,#}
-{#                                  map: map,#}
-{#                                  center: countLatLng,#}
-{#                                  radius: 50#}
-{#                                });#}
-{#                                var marker = new google.maps.Marker({#}
-{#                                    position: countLatLng,#}
-{#                                    map: map,#}
-{#                                    icon: {#}
-{#                                      path: google.maps.SymbolPath.CIRCLE,#}
-{#                                      scale: 10#}
-{#                                    },#}
-{#                                    title: box.count.toString(),#}
-{#                                });#}
-                                markers.push(marker)
+                                  }));
+
                             }
                         });
                     }
                 })
 
             });
+        }
+        function clearMarkers()
+        {
+            for(var i = 0; i < markers.length; i++)
+            {
+                markers[i].setMap(null)
+            }
+            markers = []
+
         }
         function pinSymbol(color) {
           return {
