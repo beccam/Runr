@@ -5,6 +5,8 @@ import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import com.datastax.spark.connector._
 import com.datastax.spark.connector.cql._
+import java.util.Date
+import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming._
 import com.datastax.spark.connector.streaming._
 import concurrent._
@@ -37,9 +39,16 @@ object position_calculator {
       {
         tick = counters(0).getInt("time_elapsed")
       }
-      val runner_positions = sc.cassandraTable("runr", "position")
-      val updated_positions = runner_positions.map(x => update_position(x, gps_locations,tick))
-      updated_positions.saveToCassandra("runr", "position", SomeColumns("runner_id", "base_speed", "location", "location_exact", "lat_lng"))
+      val runner_positions = sc.cassandraTable("runr", "runner_tracking")
+      var updated_positions : RDD[CassandraRow] = null
+      if(tick > 1199) {
+        updated_positions = runner_positions.map(x => reset_runners(x, gps_locations))
+        cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + " + (tick * -1) + " WHERE counter_name='time_elapsed'"))
+      }
+      else
+        updated_positions = runner_positions.map(x => update_position(x, gps_locations,tick))
+
+      updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng"))
 
       val duration = (System.nanoTime - start) / 1e6
 
@@ -51,27 +60,39 @@ object position_calculator {
   }
   def update_position(x: CassandraRow, gps_locations: Array[CassandraRow], tick: Int) : CassandraRow =
   {
-    var position_adjustment = (x.getInt("base_speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
-    if (tick >= x.getInt("starting_position") && (x.getInt("location_exact") + position_adjustment).toInt < gps_locations.length) {
-        var location = gps_locations((x.getInt("location_exact") + position_adjustment).toInt)
-        var updated_position = new CassandraRow(Array("runner_id", "base_speed", "location", "location_exact", "lat_lng"),
-          Array(x.getString("runner_id"),
-            x.getDecimal("base_speed").toString(),
-            (x.getInt("location_exact") + position_adjustment).toInt.toString(),
-            (x.getDouble("location_exact") + position_adjustment).toString(),
+    var position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
+    if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.length) {
+        var location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
+        var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+          Array(x.getString("id"),
+            new Date(),
+            x.getDecimal("speed").toString(),
+            (x.getInt("distance_actual") + position_adjustment).toInt.toString(),
+            (x.getDouble("distance_actual") + position_adjustment).toString(),
             (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees"))))
         return updated_position;
     }
     else
     {
 
-      var updated_position = new CassandraRow(Array("runner_id", "base_speed", "location", "location_exact", "lat_lng"),
-        Array(x.getString("runner_id"),
-          x.getDecimal("base_speed").toString(),
-          (x.getInt("location_exact")).toString(),
-          (x.getDouble("location_exact")).toString(),
+      var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+        Array(x.getString("id"),
+          new Date(),
+          x.getDecimal("speed").toString(),
+          (x.getInt("distance_actual")).toString(),
+          (x.getDouble("distance_actual")).toString(),
           (x.getString("lat_lng"))))
       return updated_position;
     }
+  }
+  def reset_runners(x: CassandraRow, gps_locations: Array[CassandraRow]) : CassandraRow = {
+    var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+      Array(x.getString("id"),
+        new Date(),
+        x.getDecimal("speed").toString(),
+        "0",
+        "0",
+        gps_locations(0).getString("latitude_degrees") + "," + gps_locations(0).getString("longitude_degrees")))
+    return updated_position;
   }
 }

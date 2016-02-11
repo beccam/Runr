@@ -10,18 +10,20 @@
 </fieldType>
 <fieldType class="org.apache.solr.schema.TrieDoubleField" name="TrieDoubleField"/>
 <fieldType class="org.apache.solr.schema.TrieIntField" name="TrieIntField"/>
+<fieldType class="org.apache.solr.schema.TrieDateField" name="TrieDateField"/>
 <fieldType class="org.apache.solr.schema.TrieLongField" name="TrieLongField"/>
 <fieldType name="location"  class="solr.LatLonType" subFieldSuffix="_coordinate"/>
 </types>
 <fields>
-<field indexed="true" multiValued="false" name="runner_id" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="id" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="date" stored="true" type="TrieDateField"/>
 <field indexed="true" multiValued="false" name="lat_lng" stored="true" type="location"/>
 <dynamicField name="*_coordinate"  type="TrieDoubleField" indexed="true"  stored="false"/>
-<field indexed="true" multiValued="false" name="base_speed" stored="true" type="TrieDoubleField"/>
+<field indexed="true" multiValued="false" name="speed" stored="true" type="TrieDoubleField"/>
 <field indexed="true" multiValued="false" name="starting_position" stored="true" type="TrieIntField"/>
-<field indexed="true" multiValued="false" name="location_exact" stored="true" type="TrieDoubleField"/>
-<field indexed="true" multiValued="false" name="location" stored="true" type="TrieLongField"/>
+<field indexed="true" multiValued="false" name="distance_actual" stored="true" type="TrieDoubleField"/>
+<field indexed="true" multiValued="false" name="distance" stored="true" type="TrieLongField"/>
 </fields>
-<uniqueKey>(runner_id,base_speed)</uniqueKey>
+<uniqueKey>(id,speed)</uniqueKey>
 </schema>
 

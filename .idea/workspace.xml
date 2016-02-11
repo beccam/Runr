@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27def7c0-5119-4610-9186-c408168af5ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/index.jinja2" afterPath="$PROJECT_DIR$/web/templates/index.jinja2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/index.py" afterPath="$PROJECT_DIR$/web/routes/index.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$3.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$4.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$1.class" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$.class" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator.class" afterPath="$PROJECT_DIR$/calculate-position/target/scala-2.10/classes/position_calculator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/.idea/workspace.xml" afterPath="$PROJECT_DIR$/calculate-position/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala" afterPath="$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cql/runr.cql" afterPath="$PROJECT_DIR$/cql/runr.cql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-loader/load_positions.py" afterPath="$PROJECT_DIR$/data-loader/load_positions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-loader/load_runners.py" afterPath="$PROJECT_DIR$/data-loader/load_runners.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr/runr_schema.xml" afterPath="$PROJECT_DIR$/solr/runr_schema.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/index.py" afterPath="$PROJECT_DIR$/web/routes/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/index.jinja2" afterPath="$PROJECT_DIR$/web/templates/index.jinja2" />
     </list>
     <ignored path="Runr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,9 +31,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Runr$Runner_Loader.coverage" NAME="Runner Loader Coverage Results" MODIFIED="1455060400625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
-    <SUITE FILE_PATH="coverage/Runr$Runr_Web.coverage" NAME="Runr Web Coverage Results" MODIFIED="1455070765550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
-    <SUITE FILE_PATH="coverage/Runr$Position_Loader.coverage" NAME="Position Loader Coverage Results" MODIFIED="1455053150890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
+    <SUITE FILE_PATH="coverage/Runr$Runr_Web.coverage" NAME="Runr Web Coverage Results" MODIFIED="1455166797565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
+    <SUITE FILE_PATH="coverage/Runr$Runner_Loader.coverage" NAME="Runner Loader Coverage Results" MODIFIED="1455165915769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
+    <SUITE FILE_PATH="coverage/Runr$Position_Loader.coverage" NAME="Position Loader Coverage Results" MODIFIED="1455166142313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-loader" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,18 +45,53 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="runr.cql" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/cql/runr.cql">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.33540374">
+                    <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Runr" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.jinja2" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48809522">
-              <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
-              <folding />
+            <state vertical-scroll-proportion="1.2615101">
+              <caret line="322" column="67" selection-start-line="322" selection-start-column="67" selection-end-line="322" selection-end-column="67" />
+              <folding>
+                <element signature="e#3833#3905#0#HTML" expanded="true" />
+                <element signature="e#3970#4025#0#HTML" expanded="true" />
+                <element signature="e#4082#4134#0#HTML" expanded="true" />
+                <element signature="e#4167#4186#0#HTML" expanded="true" />
+                <element signature="e#4271#4290#0#HTML" expanded="true" />
+                <element signature="e#4345#4364#0#HTML" expanded="true" />
+                <element signature="e#4530#4549#0#HTML" expanded="true" />
+                <element signature="e#4860#5025#0#HTML" expanded="true" />
+                <element signature="e#5087#5106#0#HTML" expanded="true" />
+                <element signature="e#5218#5331#0#HTML" expanded="true" />
+                <element signature="e#5396#5435#0#HTML" expanded="true" />
+                <element signature="e#5496#5542#0#HTML" expanded="true" />
+                <element signature="e#5577#5595#0#HTML" expanded="true" />
+                <element signature="e#5662#5705#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,16 +99,13 @@
       <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/routes/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.214286">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="113" column="102" selection-start-line="113" selection-start-column="102" selection-end-line="113" selection-end-column="102" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-                <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-                <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-                <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-                <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-                <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+                <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+                <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+                <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
               </folding>
             </state>
           </provider>
@@ -86,15 +131,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runr.cql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cql/runr.cql">
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
+      <file leaf-file-name="load_runners.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data-loader/load_runners.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.372093">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+                <marker date="1455165804057" expanded="true" signature="1233:1489" placeholder="INSERT INTO runr.runners... " />
+                <marker date="1455165804057" expanded="true" signature="1987:2171" placeholder="INSERT INTO runr.position... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runr_schema.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/solr/runr_schema.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.185185">
+              <caret line="20" column="90" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solrconfig.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/solr/solrconfig.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="408.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calculate_position.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="load_positions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data-loader/load_positions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+                <marker date="1455152975271" expanded="true" signature="892:1075" placeholder="INSERT INTO runr.points_by_distance... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,38 +198,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/application.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cassandra_helper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/helpers/cassandra_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.jinja2" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templates/base.jinja2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -149,8 +206,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cql/runr.cql" />
         <option value="$PROJECT_DIR$/web/templates/index.jinja2" />
+        <option value="$PROJECT_DIR$/data-loader/load_positions.py" />
+        <option value="$PROJECT_DIR$/data-loader/load_runners.py" />
+        <option value="$PROJECT_DIR$/cql/runr.cql" />
+        <option value="$PROJECT_DIR$/solr/runr_schema.xml" />
         <option value="$PROJECT_DIR$/web/routes/index.py" />
       </list>
     </option>
@@ -160,14 +220,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
-  <component name="NamedScopeManager">
-    <order />
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="55" />
-    <option name="width" value="2162" />
-    <option name="height" value="1386" />
+    <option name="x" value="1920" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -190,6 +247,8 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="ProjectPane">
@@ -324,6 +383,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="data-loader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -359,6 +432,46 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calculate-position" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calculate-position" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -370,18 +483,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ticker" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -653,28 +765,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="55" width="2162" height="1386" extended-state="6" />
+    <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27592593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3195122" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39756098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2827476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31995663" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39696312" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -690,53 +802,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data-loader/load_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/helpers/cassandra_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/base.jinja2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data-loader/load_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/application.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -767,7 +837,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -777,12 +862,9 @@
           <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
@@ -825,7 +907,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,12 +932,9 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
@@ -883,7 +977,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -893,12 +1002,9 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
@@ -941,7 +1047,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -951,12 +1072,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
@@ -991,7 +1109,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,12 +1134,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
@@ -1041,7 +1171,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,7 +1202,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +1233,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,17 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cql/runr.cql">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.372093">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/socket.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1145,27 +1309,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/calculate-position/src/main/java/calculate_position.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data-loader/load_positions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1455152975271" expanded="true" signature="892:1075" placeholder="INSERT INTO runr.points_by_distance... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data-loader/load_runners.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1455165804057" expanded="true" signature="1233:1489" placeholder="INSERT INTO runr.runners... " />
+            <marker date="1455165804057" expanded="true" signature="1987:2171" placeholder="INSERT INTO runr.position... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cql/runr.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33540374">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solr/solrconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="408.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solr/runr_schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.185185">
+          <caret line="20" column="90" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/routes/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.214286">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="102" selection-start-line="113" selection-start-column="102" selection-end-line="113" selection-end-column="102" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1455070817247" expanded="true" signature="735:790" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="735:804" placeholder="SELECT * FRO..time_elapsed..." />
-            <marker date="1455070817247" expanded="true" signature="1055:1147" placeholder="SELECT locat..points_by_distance..." />
-            <marker date="1455070817247" expanded="true" signature="4305:4377" placeholder="select count..position..." />
-            <marker date="1455070817247" expanded="true" signature="4704:4739" placeholder="SELECT * FRO..position..." />
-            <marker date="1455070817247" expanded="true" signature="5162:5288" placeholder="SELECT latit..points_by_distance..." />
+            <marker date="1455166777125" expanded="true" signature="735:804" placeholder="SELECT * FRO... time_elapsed" />
+            <marker date="1455166777125" expanded="true" signature="1055:1147" placeholder="SELECT locat... points_by_distance" />
+            <marker date="1455166777125" expanded="true" signature="4305:4384" placeholder="select count... runner_tracking" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index.jinja2">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48809522">
-          <caret line="125" column="33" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="1.2615101">
+          <caret line="322" column="67" selection-start-line="322" selection-start-column="67" selection-end-line="322" selection-end-column="67" />
+          <folding>
+            <element signature="e#3833#3905#0#HTML" expanded="true" />
+            <element signature="e#3970#4025#0#HTML" expanded="true" />
+            <element signature="e#4082#4134#0#HTML" expanded="true" />
+            <element signature="e#4167#4186#0#HTML" expanded="true" />
+            <element signature="e#4271#4290#0#HTML" expanded="true" />
+            <element signature="e#4345#4364#0#HTML" expanded="true" />
+            <element signature="e#4530#4549#0#HTML" expanded="true" />
+            <element signature="e#4860#5025#0#HTML" expanded="true" />
+            <element signature="e#5087#5106#0#HTML" expanded="true" />
+            <element signature="e#5218#5331#0#HTML" expanded="true" />
+            <element signature="e#5396#5435#0#HTML" expanded="true" />
+            <element signature="e#5496#5542#0#HTML" expanded="true" />
+            <element signature="e#5577#5595#0#HTML" expanded="true" />
+            <element signature="e#5662#5705#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

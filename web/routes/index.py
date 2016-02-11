@@ -111,43 +111,7 @@ def geospatial_clustering():
 
                 squareDistance = abs((squareSize / 2) * latPerPx)
                 solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(squareLat) + ',' + str(squareLong) + ' d=' + str(squareDistance * 110.574) + '}"}'
-                geoCount = cassandra_helper.session.execute("select count(*) from runr.position where solr_query='" + solrParams + "'")
+                geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
                 clusters.append({"latitude":squareLat, "longitude":squareLong, "count":geoCount[0]["count"]})
     return json.dumps(clusters)
 
-@index_api.route('/get_unique_runner_positions')
-def get_unique_runner_positions():
-
-    session = cassandra_helper.session
-    get_distinct_positions = session.prepare('''
-        SELECT *
-        FROM runr.position
-    ''')
-
-
-    distinct_positions = session.execute(get_distinct_positions)
-    location_ids = set()
-    for row in distinct_positions:
-        location_ids.add(row["location"])
-    ids = ",".join(str(x) for x in sorted(location_ids))
-    # print('''
-    #     SELECT * FROM points_by_distance
-    #     WHERE location_id
-    #     IN {}
-    # '''.format(",".join(results)))
-    get_geocords = session.prepare('''
-        SELECT latitude_degrees, longitude_degrees, location_id FROM runr.points_by_distance
-        WHERE location_id
-        IN ({})
-    '''.format(ids))
-
-    lat_lng = session.execute(get_geocords)
-    results = []
-    for rows in lat_lng:
-        results.append({
-            "latitude": rows["latitude_degrees"],
-            "longitude": rows["longitude_degrees"],
-            "location_id": rows["location_id"]
-        })
-
-    return json.dumps(results)

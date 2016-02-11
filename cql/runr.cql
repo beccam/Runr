@@ -1,7 +1,37 @@
 CREATE KEYSPACE runr WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 
+CREATE TABLE runr.runner_predictions (
+    id text,
+    date timestamp,
+    finish_place int,
+    finish_time double,
+    PRIMARY KEY (id, date)
+) WITH CLUSTERING ORDER BY (date DESC);
+
+CREATE TABLE runr.runner_tracking (
+    id text,
+    date timestamp,
+    lat_lng text,
+    distance bigint,
+    distance_actual double,
+    starting_position int,
+    speed double,
+    PRIMARY KEY (id, speed)
+);
+
+CREATE TABLE runr.runner_tracking_history (
+    id text,
+    date timestamp,
+    lat_lng text,
+    distance bigint,
+    distance_actual double,
+    starting_position int,
+    speed double,
+    PRIMARY KEY (id, date)
+) WITH CLUSTERING ORDER BY (date DESC);
+
 CREATE TABLE runr.runners (
-    runner_id text,
+    id text PRIMARY KEY,
     first_name text,
     last_name text,
     given_name text,
@@ -13,34 +43,24 @@ CREATE TABLE runr.runners (
     birth_day int,
     weight int,
     height int,
-    base_speed double,
-
-    PRIMARY KEY (runner_id, base_speed)
-);
-
-CREATE TABLE runr.time_elapsed (
-    counter_name text,
-    time_elapsed counter,
-    PRIMARY KEY (counter_name)
-);
-
-CREATE TABLE runr.position (
-    runner_id text,
-    base_speed double,
-    location bigint,
-    location_exact double,
-    starting_position int,
     lat_lng text,
-    PRIMARY KEY (runner_id, base_speed)
+    cluster int,
+    cluster_dist double
 );
 
-CREATE TABLE runr.trackpoints(
-    location_id	int primary key,
-    altitude_meters double,
-    distance_meters double,
-    latitude_degrees double,
-    longitude_degrees double
+CREATE TABLE runr.projected_finish (
+    finish_place int PRIMARY KEY,
+    id text,
+    finish_time double,
+    speed double,
 );
+
+CREATE TABLE runr.cluster_details (
+    cluster int,
+    mile int,
+    runners int,
+    PRIMARY KEY (cluster, mile)
+) WITH CLUSTERING ORDER BY (mile ASC);
 
 CREATE TABLE runr.points_by_distance (
     location_id bigint PRIMARY KEY,
@@ -49,3 +69,20 @@ CREATE TABLE runr.points_by_distance (
     latitude_degrees double,
     longitude_degrees double,
 );
+
+CREATE TABLE runr.cluster_summary (
+    cluster int PRIMARY KEY,
+    runners int,
+    avg_speed double,
+    min_speed double,
+    max_speed double,
+    std_deviation double,
+);
+
+CREATE TABLE runr.time_elapsed (
+    counter_name text,
+    time_elapsed counter,
+    PRIMARY KEY (counter_name)
+);
+
+
