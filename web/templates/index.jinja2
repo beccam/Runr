@@ -104,7 +104,7 @@
             <div class="col-md-2 col-xs-4 col-xs-offset-1 col-md-offset-3">
                 <div class="form-group has-feedback ">
                     <i class="glyphicon glyphicon-search form-control-feedback"></i>
-                    <input type="text" class="form-control" placeholder="Search by Name, Bib #"/>
+                    <input id="runnerSearch" type="text" class="form-control" placeholder="Search by Name, Bib #"/>
                 </div>
             </div>
         </div>
@@ -132,10 +132,10 @@
                     <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 col-md-offset-10">
                         <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
                         <div style="float:left; padding:10px; padding-bottom:0px">
-                            <b style="color:white">Phil Bayliss</b>
+                            <b id="runner_name" style="color:white">Phil Bayliss</b>
                             </br>
                             <div style="color:white">Age: Undefined</div>
-                            <div style="color:white">Weight: Undefined</div>
+                            <div id="runner_weight" style="color:white">Weight: Undefined</div>
 
                         </div>
                         <div style="float:left; padding:10px; color:white">
@@ -171,6 +171,29 @@
 {#            <div class="col-md-1" style="background-color:#ffffff;">Hi</div>#}
 {#        </div>#}
     <script>
+        $('#runnerSearch').bind("enterKey",function(e){
+            $.ajax({
+                'url':'/search_for_runner',
+                'data': {
+                    'query':$("#runnerSearch").val()
+                },
+                success: function(data)
+                {
+                    runner_object = JSON.parse(data);
+                    console.log(runner_object);
+                    $("#runner_weight").text(runner_object.weight);
+                    $("#runner_name").text(runner_object.given_name);
+                }
+            })
+           //do stuff here
+        });
+        $('#runnerSearch').keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $(this).trigger("enterKey");
+            }
+        });
+
         $("#expandChart").click(function()
         {
             $("#expandedChartView").toggle();
@@ -179,7 +202,6 @@
             $.ajax({
                 'url': '/get_timer_tick',
                 success: function (time) {
-                    console.log(time)
                     $("#timerText").text(pad(Math.floor(time / 3600),2) + ":" + pad(Math.floor((time % 3600) / 60),2) + ":" + pad(time % 60,2))
                 }
             })

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema name="autoSolrSchema" version="1.5">
+<types>
+<fieldType class="org.apache.solr.schema.TextField" name="TextField">
+<analyzer>
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType class="org.apache.solr.schema.TrieIntField" name="TrieIntField"/>
+<fieldType class="org.apache.solr.schema.StrField" name="StrField"/>
+<fieldType class="org.apache.solr.schema.TrieDoubleField" name="TrieDoubleField"/>
+</types>
+<fields>
+<field indexed="true" multiValued="false" name="birth_country" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="birth_month" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="cluster" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="id" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="weight" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="given_name" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="first_name" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="birth_state" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="lat_lng" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="birth_day" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="cluster_dist" stored="true" type="TrieDoubleField"/>
+<field indexed="true" multiValued="false" name="birth_city" stored="true" type="TextField"/>
+<field indexed="true" multiValued="false" name="birth_year" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="height" stored="true" type="TrieIntField"/>
+<field indexed="true" multiValued="false" name="last_name" stored="true" type="TextField"/>
+</fields>
+<uniqueKey>id</uniqueKey>
+</schema>
+

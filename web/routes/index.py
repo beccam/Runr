@@ -1,5 +1,6 @@
 import logging
 import time
+from datetime import date
 from orderedset import OrderedSet
 from collections import OrderedDict
 from cassandra.query import ValueSequence
@@ -22,6 +23,21 @@ prepared_statements = None
 @index_api.route('/')
 def index():
     return render_template('index.jinja2')
+@index_api.route('/search_for_runner')
+def search_for_runner():
+    query = request.args.get("query")
+    search_runners = cassandra_helper.session.prepare('''
+    SELECT * FROM runr.runners
+    WHERE solr_query=?
+    ''')
+    results = cassandra_helper.session.execute(search_runners.bind({
+        'solr_query': 'given_name: "' + query + '"'
+    }))
+    birth_date = date(results.current_rows[0]["birth_year"], )
+    return json.dumps({
+        'given_name':results.current_rows[0]["given_name"],
+        'weight': results.current_rows[0]["weight"]
+    })
 
 @index_api.route('/get_timer_tick')
 def get_timer_tick():
