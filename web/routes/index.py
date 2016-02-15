@@ -1,5 +1,7 @@
 import logging
 import time
+import numpy
+from numpy import array, sort
 from LatLon import LatLon, Latitude, Longitude
 from datetime import date
 from orderedset import OrderedSet
@@ -56,11 +58,18 @@ def get_route_coordinates_helper():
     get_route_coordinates = cassandra_helper.session.prepare('''
         SELECT location_id, latitude_degrees, longitude_degrees
         FROM runr.points_by_distance_filtered
+        LIMIT 5000
     ''')
     coordinates = cassandra_helper.session.execute(get_route_coordinates)
-
+    sum = 0
     sorted_coordinates = []
     i = 0
+
+    dType = [('location_id', int), ('latitude_degrees', float), ('longitude_degrees', int)]
+    values = coordinates.current_rows
+    a = numpy.array(values, dtype=dType)
+    numpy.sort(a, order='location_id')
+
     for row in coordinates:
         if i == 0:
             sorted_coordinates.append({
@@ -68,22 +77,27 @@ def get_route_coordinates_helper():
                 "lat": row["latitude_degrees"],
                 "lng": row["longitude_degrees"]})
         else:
-            for j in xrange(0, len(sorted_coordinates)):
+            for j in range(0, len(sorted_coordinates)):
                 if int(sorted_coordinates[j]["location_id"]) > int(row["location_id"]):
                     sorted_coordinates.insert(j,{
                         "location_id": row["location_id"],
                         "lat": row["latitude_degrees"],
                         "lng": row["longitude_degrees"]})
+                    sum += j
                     break;
                 elif j == len(sorted_coordinates) - 1 and int(sorted_coordinates[j]["location_id"]) < int(row["location_id"]):
                     sorted_coordinates.append({
                         "location_id": row["location_id"],
                         "lat": row["latitude_degrees"],
                         "lng": row["longitude_degrees"]})
+                    sum += j
                     break;
 
 
         i += 1
+    print i
+    print j
+    print i * sum
     return sorted_coordinates
 
 @index_api.route('/geospatial_clustering')
