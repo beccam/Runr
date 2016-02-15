@@ -171,6 +171,7 @@
 {#            <div class="col-md-1" style="background-color:#ffffff;">Hi</div>#}
 {#        </div>#}
     <script>
+
         $('#runnerSearch').bind("enterKey",function(e){
             $.ajax({
                 'url':'/search_for_runner',
@@ -219,6 +220,7 @@
                 mapTypeControl: false,
                 disableDefaultUI: true
             });
+
             $.ajax({
                 url:'/get_route_coordinates',
                 success:function(data)
@@ -254,6 +256,27 @@
                 }
             })
             google.maps.event.addListener(map, 'idle', function() {
+                $.ajax({
+                url:'/geospatial_search_new',
+                data:{
+                    latitudeStart: map.getBounds().getNorthEast().lat(),
+                    longitudeStart: map.getBounds().getSouthWest().lng(),
+                    latitudeEnd: map.getBounds().getSouthWest().lat(),
+                    longitudeEnd: map.getBounds().getNorthEast().lng(),
+                },
+                success: function(data)
+                {
+{#                    var i = 0;#}
+{#                    JSON.parse(data).forEach(function(box)#}
+{#                    {#}
+{#                        if(box.count > 0) {#}
+{#                            markers[i].labelContent = box.count.toString();#}
+{#                            markers[i].label.draw()#}
+{#                            i++;#}
+{#                        }#}
+{#                    });#}
+                }
+            })
                 $.ajax({
                 url:'/geospatial_clustering',
                 data:{
@@ -338,8 +361,9 @@
         }
 
 
-        setInterval(updateTimer, 1000)
-        setInterval(updateClusterMarkers, 5000)
+
+{#        setInterval(updateTimer, 1000)#}
+{#        setInterval(updateClusterMarkers, 5000)#}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuNqpFE8a9dKuIINC91jdzd0IWJ1js-bw&callback=initMap&libraries=geometry"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
