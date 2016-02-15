@@ -266,32 +266,10 @@
                 },
                 success: function(data)
                 {
-{#                    var i = 0;#}
-{#                    JSON.parse(data).forEach(function(box)#}
-{#                    {#}
-{#                        if(box.count > 0) {#}
-{#                            markers[i].labelContent = box.count.toString();#}
-{#                            markers[i].label.draw()#}
-{#                            i++;#}
-{#                        }#}
-{#                    });#}
-                }
-            })
-                $.ajax({
-                url:'/geospatial_clustering',
-                data:{
-                    screenWidth: $("#google-map").width(),
-                    screenHeight: $("#google-map").height(),
-                    latitudeStart: map.getBounds().getNorthEast().lat(),
-                    longitudeStart: map.getBounds().getSouthWest().lng(),
-                    latitudeDistance: map.getBounds().getSouthWest().lat() - map.getBounds().getNorthEast().lat(),
-                    longitudeDistance: map.getBounds().getSouthWest().lng() - map.getBounds().getNorthEast().lng()
-                },
-                success: function(data)
-                {
                     clearMarkers();
                     JSON.parse(data).forEach(function(box)
                     {
+                        console.log(box);
                         if(box.count > 0) {
                             var countLatLng = {lat: box.latitude, lng: box.longitude};
                             markers.push(new MarkerWithLabel({
@@ -307,9 +285,41 @@
 
                         }
                     });
-
                 }
             })
+{#                $.ajax({#}
+{#                url:'/geospatial_clustering',#}
+{#                data:{#}
+{#                    screenWidth: $("#google-map").width(),#}
+{#                    screenHeight: $("#google-map").height(),#}
+{#                    latitudeStart: map.getBounds().getNorthEast().lat(),#}
+{#                    longitudeStart: map.getBounds().getSouthWest().lng(),#}
+{#                    latitudeDistance: map.getBounds().getSouthWest().lat() - map.getBounds().getNorthEast().lat(),#}
+{#                    longitudeDistance: map.getBounds().getSouthWest().lng() - map.getBounds().getNorthEast().lng()#}
+{#                },#}
+{#                success: function(data)#}
+{#                {#}
+{#                    clearMarkers();#}
+{#                    JSON.parse(data).forEach(function(box)#}
+{#                    {#}
+{#                        if(box.count > 0) {#}
+{#                            var countLatLng = {lat: box.latitude, lng: box.longitude};#}
+{#                            markers.push(new MarkerWithLabel({#}
+{#                                position: countLatLng,#}
+{#                                map: map,#}
+{#                                labelContent: box.count.toString(),#}
+{#                                labelAnchor: new google.maps.Point(15, 7),#}
+{#                                labelClass: "labels", // the CSS class for the label#}
+{#                                labelInBackground: false,#}
+{#                                icon: pinSymbol('#383838'),#}
+{#                                title: 'clusterCount'#}
+{#                              }));#}
+{##}
+{#                        }#}
+{#                    });#}
+{##}
+{#                }#}
+{#            })#}
 
             });
         }

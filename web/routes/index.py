@@ -1,6 +1,6 @@
 import logging
 import time
-import LatLon
+from LatLon import LatLon, Latitude, Longitude
 from datetime import date
 from orderedset import OrderedSet
 from collections import OrderedDict
@@ -55,18 +55,33 @@ def get_route_coordinates():
 def get_route_coordinates_helper():
     get_route_coordinates = cassandra_helper.session.prepare('''
         SELECT location_id, latitude_degrees, longitude_degrees
-        FROM runr.points_by_distance
+        FROM runr.points_by_distance_filtered
     ''')
     coordinates = cassandra_helper.session.execute(get_route_coordinates)
 
     sorted_coordinates = []
-    i = 1
+    i = 0
     for row in coordinates:
-        if i % 10 == 0 or i == 0:
+        if i == 0:
             sorted_coordinates.append({
                 "location_id": row["location_id"],
                 "lat": row["latitude_degrees"],
                 "lng": row["longitude_degrees"]})
+        else:
+            for j in xrange(0, len(sorted_coordinates)):
+                if int(sorted_coordinates[j]["location_id"]) > int(row["location_id"]):
+                    sorted_coordinates.insert(j,{
+                        "location_id": row["location_id"],
+                        "lat": row["latitude_degrees"],
+                        "lng": row["longitude_degrees"]})
+                    break;
+                elif j == len(sorted_coordinates) - 1 and int(sorted_coordinates[j]["location_id"]) < int(row["location_id"]):
+                    sorted_coordinates.append({
+                        "location_id": row["location_id"],
+                        "lat": row["latitude_degrees"],
+                        "lng": row["longitude_degrees"]})
+                    break;
+
 
         i += 1
     return sorted_coordinates
@@ -135,14 +150,21 @@ def geospatial_search_new():
     end = None
     while i < len(coordinates):
         currentCoordinate = coordinates[i]
-        if start is None and currentCoordinate["lat"] > latitudeStart and currentCoordinate["lng"] >longitudeStart:
+        if start is None and currentCoordinate["lat"] < latitudeStart and currentCoordinate["lng"] >longitudeStart:
             start = currentCoordinate
-            currentClusterCenter = currentCoordinate
-            clusters.append(currentClusterCenter)
-        if start != None and currentCoordinate["lat"] < latitudeEnd or currentCoordinate["lng"] < longitudeEnd:
-            break;
-        currentLatLon = LatLon(currentCoordinate["lat"], currentCoordinate["lng"])
-        lastClusterLatLon = LatLon(clusters[-1]["lat"], clusters[-1]["lng"])
-        if currentLatLon.distance(lastClusterLatLon) > 5:
-            print "Hello"
+            solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(currentCoordinate["lat"]) + ',' + str(currentCoordinate["lng"]) + ' d=' + '2.5' + '}"}'
+            geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
+            clusters.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
+            clusters.append(currentCoordinate)
+        # if start != None and currentCoordinate["lat"] < latitudeEnd or currentCoordinate["lng"] < longitudeEnd:
+        #     break;
+        if len(clusters) > 0:
+            currentLatLon = LatLon(Latitude(currentCoordinate["lat"]), Longitude(currentCoordinate["lng"]))
+            lastClusterLatLon = LatLon(Latitude(clusters[-1]["lat"]), Longitude(clusters[-1]["lng"]))
+            if currentLatLon.distance(lastClusterLatLon) > 5:
+                solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(currentCoordinate["lat"]) + ',' + str(currentCoordinate["lng"]) + ' d=' + '2.5' + '}"}'
+                geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
+                clusters.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
+                clusters.append(currentCoordinate)
         i += 10
+    return json.dumps(clusters)

@@ -70,6 +70,15 @@ CREATE TABLE runr.points_by_distance (
     longitude_degrees double,
 );
 
+CREATE TABLE runr.points_by_distance_filtered (
+    location_id bigint,
+    altitude_meters double,
+    distance_meters double ,
+    latitude_degrees double,
+    longitude_degrees double,
+    PRIMARY KEY ((distance_meters), location_id)
+) WITH CLUSTERING ORDER BY (location_id DESC);
+
 CREATE TABLE runr.cluster_summary (
     cluster int PRIMARY KEY,
     runners int,
