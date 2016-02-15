@@ -1,5 +1,6 @@
 import logging
 import time
+import LatLon
 from datetime import date
 from orderedset import OrderedSet
 from collections import OrderedDict
@@ -47,9 +48,11 @@ def get_timer_tick():
     ''')
     return json.dumps(cassandra_helper.session.execute(get_timer_counter)[0]["time_elapsed"])
 
-
 @index_api.route('/get_route_coordinates')
 def get_route_coordinates():
+    sorted_coordinates = get_route_coordinates_helper()
+    return json.dumps(sorted_coordinates)
+def get_route_coordinates_helper():
     get_route_coordinates = cassandra_helper.session.prepare('''
         SELECT location_id, latitude_degrees, longitude_degrees
         FROM runr.points_by_distance
@@ -57,10 +60,6 @@ def get_route_coordinates():
     coordinates = cassandra_helper.session.execute(get_route_coordinates)
 
     sorted_coordinates = []
-    # sorted_coordinates.append({
-    #                 "location_id": coordinates[0]["location_id"],
-    #                 "lat": coordinates[0]["latitude_degrees"],
-    #                 "lng": coordinates[0]["longitude_degrees"]})
     i = 1
     for row in coordinates:
         if i % 10 == 0 or i == 0:
@@ -70,16 +69,7 @@ def get_route_coordinates():
                 "lng": row["longitude_degrees"]})
 
         i += 1
-        # for j in range(0, len(sorted_coordinates)):
-        #     if int(row["location_id"]) > int(sorted_coordinates[j]["location_id"]):
-        #         sorted_coordinates.insert(j,{
-        #             "location_id": row["location_id"],
-        #             "lat": row["latitude_degrees"],
-        #             "lng": row["longitude_degrees"]})
-        #
-        #         break;
-
-    return json.dumps(sorted_coordinates)
+    return sorted_coordinates
 
 @index_api.route('/geospatial_clustering')
 def geospatial_clustering():
@@ -131,3 +121,28 @@ def geospatial_clustering():
                 clusters.append({"latitude":squareLat, "longitude":squareLong, "count":geoCount[0]["count"]})
     return json.dumps(clusters)
 
+@index_api.route("/geospatial_search_new")
+def geospatial_search_new():
+    latitudeStart = float(request.args.get('latitudeStart'))
+    longitudeStart = float(request.args.get('longitudeStart'))
+    latitudeEnd = float(request.args.get('latitudeEnd'))
+    longitudeEnd = float(request.args.get('longitudeEnd'))
+
+    i = 0
+    clusters = []
+    coordinates = get_route_coordinates_helper()
+    start = None
+    end = None
+    while i < len(coordinates):
+        currentCoordinate = coordinates[i]
+        if start is None and currentCoordinate["lat"] > latitudeStart and currentCoordinate["lng"] >longitudeStart:
+            start = currentCoordinate
+            currentClusterCenter = currentCoordinate
+            clusters.append(currentClusterCenter)
+        if start != None and currentCoordinate["lat"] < latitudeEnd or currentCoordinate["lng"] < longitudeEnd:
+            break;
+        currentLatLon = LatLon(currentCoordinate["lat"], currentCoordinate["lng"])
+        lastClusterLatLon = LatLon(clusters[-1]["lat"], clusters[-1]["lng"])
+        if currentLatLon.distance(lastClusterLatLon) > 5:
+            print "Hello"
+        i += 10
