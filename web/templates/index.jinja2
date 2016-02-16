@@ -132,21 +132,44 @@
                     <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 col-md-offset-0">
                         <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
                         <div style="float:left; padding:10px; padding-bottom:0px">
-                            <b id="runner_name" style="color:white">Phil Bayliss</b>
+                            <b id="runner_name" style="color:white"></b>
                             </br>
-                            <div style="color:white">Age: Undefined</div>
-                            <div id="runner_weight" style="color:white">Weight: Undefined</div>
+                            <div style="color:white">Age: </div>
+                            <div id="runner_weight" style="color:white">Weight: </div>
 
                         </div>
                         <div style="float:left; padding:10px; color:white">
-                            <div style="color:white">Average Speed: 50km/s</div>
-                            <div style="color:white">Projected Finish: 50th</div>
-                            <div style="color:white">Projected Time to Finish: 1:45:43</div>
+                            <div style="color:white">Average Speed: </div>
+                            <div style="color:white">Projected Finish: </div>
+                            <div style="color:white">Projected Time to Finish: </div>
 
                         </div>
                     </div>
                     <div id="expandedChartView" style="background-color:#4A4A4A; display:none; border-radius:4px; margin-top: 15px; margin-bottom:15px; pointer-events: all;  height:60%; position:absolute; top:10%" class="col-md-8 col-md-offset-3">
-                        <b style="color:white">I AM AM EXPANDED VIEW OF THE CHART IN THE BOTTOM RIGHT</b>
+                        <div style="padding: 10px; height: 100%">
+                            <div id="expandedCarousel"  style="height: 100%" class="carousel slide" data-ride="carousel">
+
+
+                              <!-- Wrapper for slides -->
+                              <div class="carousel-inner" style="height: 100%" role="listbox">
+                                <div class="item active" style="height: 100%">
+{#                                  <div class="carousel-caption">#}
+                                    <div id="expandedPieChart" style="height: 100%"></div>
+{#                                  </div>#}
+                                </div>
+                              </div>
+
+                              <!-- Controls -->
+                              <a class="left carousel-control" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="right carousel-control" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </div>
+                        </div>
                     </div>
                     <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all; position: fixed;bottom: 10px;left:15px" class="col-md-2 ">
                         <div style="color:white; text-align: center" id="clusterCount">Total Cluster Count: 550</div>
@@ -195,35 +218,35 @@
 
     <script>
         google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Work',     11],
+              ['Eat',      2],
+              ['Commute',  2],
+              ['Watch TV', 2],
+              ['Sleep',    7]
+            ]);
 
-        var options = {
-            title: 'My Daily Activities',
-            backgroundColor: { fill:'transparent' },
-            titleTextStyle: {
-                color: 'white'
-            },
-            legend: {
-                textStyle: {
+            var options = {
+                title: 'My Daily Activities',
+                backgroundColor: { fill:'transparent' },
+                titleTextStyle: {
                     color: 'white'
+                },
+                legend: {
+                    textStyle: {
+                        color: 'white'
+                    }
                 }
-            }
-        };
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
 
-        chart.draw(data, options);
-      }
+        }
         $('#runnerSearch').bind("enterKey",function(e){
             $.ajax({
                 'url':'/search_for_runner',
@@ -233,8 +256,7 @@
                 success: function(data)
                 {
                     runner_object = JSON.parse(data);
-                    console.log(runner_object);
-                    $("#runner_weight").text(runner_object.weight);
+                    $("#runner_weight").text("Weight:" + runner_object.weight);
                     $("#runner_name").text(runner_object.given_name);
                 }
             })
@@ -250,6 +272,35 @@
         $("#expandChart").click(function()
         {
             $("#expandedChartView").toggle();
+            if($("#expandedChartView").css("visibility") == "visible") {
+                google.charts.setOnLoadCallback(drawExpandedPieChart);
+                function drawExpandedPieChart() {
+
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Hours per Day'],
+                        ['Work', 11],
+                        ['Eat', 2],
+                        ['Commute', 2],
+                        ['Watch TV', 2],
+                        ['Sleep', 7]
+                    ]);
+
+                    var options = {
+                        title: 'My Daily Activities',
+                        backgroundColor: {fill: 'transparent'},
+                        titleTextStyle: {
+                            color: 'white'
+                        },
+                        legend: {
+                            textStyle: {
+                                color: 'white'
+                            }
+                        }
+                    };
+                    var expandedChart = new google.visualization.PieChart(document.getElementById('expandedPieChart'));
+                    expandedChart.draw(data, options);
+                }
+            }
         })
         function updateTimer() {
             $.ajax({

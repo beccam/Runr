@@ -28,11 +28,6 @@ def index():
     return render_template('index.jinja2')
 @index_api.route('/search_for_runner')
 def search_for_runner():
-
-
-
-
-
     query = request.args.get("query")
     search_runners = cassandra_helper.session.prepare('''
     SELECT * FROM runr.runners
@@ -41,10 +36,16 @@ def search_for_runner():
     results = cassandra_helper.session.execute(search_runners.bind({
         'solr_query': 'given_name: "' + query + '"'
     }))
-    return json.dumps({
-        'given_name':results.current_rows[0]["given_name"],
-        'weight': results.current_rows[0]["weight"]
-    })
+    if len(results.current_rows) > 0:
+        return json.dumps({
+            'given_name':results.current_rows[0]["given_name"],
+            'weight': results.current_rows[0]["weight"]
+        })
+    else:
+        return json.dumps({
+            'given_name':'',
+            'weight':''
+        })
 
 @index_api.route('/get_timer_tick')
 def get_timer_tick():
