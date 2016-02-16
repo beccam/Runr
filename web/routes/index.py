@@ -59,6 +59,7 @@ def get_timer_tick():
 def get_route_coordinates():
     sorted_coordinates = get_route_coordinates_helper()
     return json.dumps(sorted_coordinates)
+
 def get_route_coordinates_helper():
     get_route_coordinates = cassandra_helper.session.prepare('''
         SELECT location_id, latitude_degrees, longitude_degrees
@@ -155,9 +156,9 @@ def geospatial_search():
             geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
             clusters.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
             clusters.append(currentCoordinate)
-        if start != None and not insideMap(latitudeStart, latitudeEnd, longitudeStart, longitudeEnd, currentCoordinate["lat"], currentCoordinate["lng"]):
-            break;
-        if len(clusters) > 0:
+        # if start != None and not insideMap(latitudeStart, latitudeEnd, longitudeStart, longitudeEnd, currentCoordinate["lat"], currentCoordinate["lng"]):
+        #     break;
+        if len(clusters) > 0 and insideMap(latitudeStart, latitudeEnd, longitudeStart, longitudeEnd, currentCoordinate["lat"], currentCoordinate["lng"]):
             currentLatLon = LatLon(Latitude(currentCoordinate["lat"]), Longitude(currentCoordinate["lng"]))
             lastClusterLatLon = LatLon(Latitude(clusters[-1]["lat"]), Longitude(clusters[-1]["lng"]))
             if abs(currentLatLon.distance(lastClusterLatLon)) > radius * 2:
