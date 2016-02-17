@@ -9,7 +9,8 @@ cqlsh -f runr.cql
 Load the Solr cores
 ```
 cd ../solr
-dsetool create_core runr.position schema=runr_schema.xml solrconfig=solrconfig.xml
+dsetool create_core runr.runner_tracking schema=runr_runner_tracking_schema.xml solrconfig=runr_runner_tracking.xml
+dsetool create_core runr.runners schema=runr_runners_schema.xml solrconfig=runr_runners_config.xml
 ```
 
 Load the data
