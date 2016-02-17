@@ -13,6 +13,13 @@ dsetool create_core runr.runner_tracking schema=runr_runner_tracking_schema.xml 
 dsetool create_core runr.runners schema=runr_runners_schema.xml solrconfig=runr_runners_config.xml
 ```
 
+Install Python Dependencies
+```
+pip install numpy
+pip install LatLon
+pip install orderedset
+```
+
 Load the data
 ```
 cd ../data-loader
