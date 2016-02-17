@@ -10,6 +10,12 @@
 <fieldType class="org.apache.solr.schema.TrieIntField" name="TrieIntField"/>
 <fieldType class="org.apache.solr.schema.StrField" name="StrField"/>
 <fieldType class="org.apache.solr.schema.TrieDoubleField" name="TrieDoubleField"/>
+<fieldType class="solr.TextField" name="text_auto">
+<analyzer>
+<tokenizer class="solr.KeywordTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
 </types>
 <fields>
 <field indexed="true" multiValued="false" name="birth_country" stored="true" type="TextField"/>
@@ -27,6 +33,8 @@
 <field indexed="true" multiValued="false" name="birth_year" stored="true" type="TrieIntField"/>
 <field indexed="true" multiValued="false" name="height" stored="true" type="TrieIntField"/>
 <field indexed="true" multiValued="false" name="last_name" stored="true" type="TextField"/>
+<field name="given_name_autocomplete" type="text_auto" indexed="true" stored="true" multiValued="false" />
+<copyField source="given_name" dest="given_name_autocomplete" />
 </fields>
 <uniqueKey>id</uniqueKey>
 </schema>

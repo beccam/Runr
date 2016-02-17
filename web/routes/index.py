@@ -26,6 +26,11 @@ prepared_statements = None
 @index_api.route('/')
 def index():
     return render_template('index.jinja2')
+
+@index_api.route('/')
+def search_suggestions():
+    return ""
+
 @index_api.route('/search_for_runner')
 def search_for_runner():
     query = request.args.get("query")
