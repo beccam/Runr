@@ -3,6 +3,7 @@ import time
 import numpy
 from numpy import array, sort
 from LatLon import LatLon, Latitude, Longitude
+import datetime
 from datetime import date
 from orderedset import OrderedSet
 from collections import OrderedDict
@@ -38,18 +39,33 @@ def search_for_runner():
     SELECT * FROM runr.runners
     WHERE solr_query=?
     ''')
-    results = cassandra_helper.session.execute(search_runners.bind({
+    search_runner_tracking = cassandra_helper.session.prepare('''
+    SELECT * FROM runr.runner_tracking
+    WHERE solr_query=?
+    ''')
+    runner = cassandra_helper.session.execute(search_runners.bind({
         'solr_query': 'given_name: "' + query + '"'
     }))
-    if len(results.current_rows) > 0:
+
+    if len(runner.current_rows) > 0:
+        runner_position = cassandra_helper.session.execute(search_runner_tracking.bind({
+            'solr_query': 'id: "' + runner.current_rows[0]["id"] + '"'
+        }))
+        if len(runner_position.current_rows) == 0:
+            raise ValueError("Runner row mismatch")
+        today = date.today()
         return json.dumps({
-            'given_name':results.current_rows[0]["given_name"],
-            'weight': results.current_rows[0]["weight"]
+            'given_name':runner.current_rows[0]["given_name"],
+            'weight': runner.current_rows[0]["weight"],
+            'age': today.year - runner.current_rows[0]["birth_year"] - ((today.month, today.day) < (runner.current_rows[0]["birth_month"], runner.current_rows[0]["birth_day"])),
+            'average_speed': runner_position[0]["average_speed"],
         })
     else:
         return json.dumps({
             'given_name':'',
-            'weight':''
+            'age':'',
+            'weight':'',
+            'average_speed':'',
         })
 
 @index_api.route('/get_timer_tick')

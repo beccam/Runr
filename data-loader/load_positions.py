@@ -17,7 +17,6 @@ with open('trackpoints_updated.csv', 'rU') as csvfile:
     i = 1
     for row in reader:
         # if row[10] != 'NaN' and row[11] != 'NaN' and row[12] != 'NaN':
-        print("Loading row {}".format(row[0]))
 
         point_by_distance = {
                 "location_id":long(math.floor(float(row[4]))),

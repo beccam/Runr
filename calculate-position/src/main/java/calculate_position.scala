@@ -48,7 +48,7 @@ object position_calculator {
       else
         updated_positions = runner_positions.map(x => update_position(x, gps_locations,tick))
 
-      updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng"))
+      updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"))
 
       val duration = (System.nanoTime - start) / 1e6
 
@@ -60,39 +60,42 @@ object position_calculator {
   }
   def update_position(x: CassandraRow, gps_locations: Array[CassandraRow], tick: Int) : CassandraRow =
   {
-    var position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
+    val position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
     if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.length) {
-        var location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
-        var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+        val location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
+        val updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
           Array(x.getString("id"),
             new Date(),
             x.getDecimal("speed").toString(),
             (x.getInt("distance_actual") + position_adjustment).toInt.toString(),
             (x.getDouble("distance_actual") + position_adjustment).toString(),
-            (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees"))))
+            (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees")),
+            (((x.getDouble("average_speed") + position_adjustment) / 2).toString())))
         return updated_position;
     }
     else
     {
 
-      var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+      val updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
         Array(x.getString("id"),
           new Date(),
           x.getDecimal("speed").toString(),
           (x.getInt("distance_actual")).toString(),
           (x.getDouble("distance_actual")).toString(),
-          (x.getString("lat_lng"))))
+          (x.getString("lat_lng")),
+          (x.getDouble("average_speed").toString())))
       return updated_position;
     }
   }
   def reset_runners(x: CassandraRow, gps_locations: Array[CassandraRow]) : CassandraRow = {
-    var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng"),
+    val updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
       Array(x.getString("id"),
         new Date(),
         x.getDecimal("speed").toString(),
         "0",
         "0",
-        gps_locations(0).getString("latitude_degrees") + "," + gps_locations(0).getString("longitude_degrees")))
+        gps_locations(0).getString("latitude_degrees") + "," + gps_locations(0).getString("longitude_degrees"),
+        x.getDecimal("speed").toString()))
     return updated_position;
   }
 }

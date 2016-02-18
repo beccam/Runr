@@ -16,6 +16,7 @@ CREATE TABLE runr.runner_tracking (
     distance_actual double,
     starting_position int,
     speed double,
+    average_speed double,
     PRIMARY KEY (id, speed)
 );
 
@@ -27,6 +28,7 @@ CREATE TABLE runr.runner_tracking_history (
     distance_actual double,
     starting_position int,
     speed double,
+    average_speed double,
     PRIMARY KEY (id, date)
 ) WITH CLUSTERING ORDER BY (date DESC);
 

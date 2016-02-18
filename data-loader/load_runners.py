@@ -19,7 +19,6 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
 
     for row in reader:
         if row[10] != 'NaN' and row[11] != 'NaN' and row[12] != 'NaN':
-            print("Loading row {}".format(row[0]))
             runner = {
                     "id":row[0],
                     "first_name":row[1],
@@ -51,13 +50,14 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
                     "distance": 0,
                     "distance_actual": 0,
                     "starting_position": i/100,
+                    "average_speed": Decimal(row[12])
                 }
 
             initialize_runner_position = session.prepare('''
                 INSERT INTO runr.runner_tracking
-                    (id, date, speed, lat_lng, distance, distance_actual, starting_position)
+                    (id, date, speed, lat_lng, distance, distance_actual, starting_position, average_speed)
                 VALUES
-                    (?,?,?,?,?,?,?)
+                    (?,?,?,?,?,?,?,?)
             ''')
             i += 1
 
