@@ -32,6 +32,33 @@ def index():
 def search_suggestions():
     return ""
 
+@index_api.route('/get_scatter_plot_data')
+def get_scatter_plot_data():
+    get_runners = cassandra_helper.session.prepare('''
+    SELECT weight, height, birth_year, birth_month, birth_day FROM runr.runners
+    ''')
+    runners = cassandra_helper.session.execute(get_runners)
+    results = {'x':[],
+               'y':[],
+               'z':[]}
+    today = date.today()
+
+    for runner in runners:
+        results['x'].append(runner["weight"])
+        results['y'].append(runner["height"])
+        results['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"])))
+    return json.dumps(results)
+
+@index_api.route('/get_runner_lat_lon')
+def get_runner_lat_lon():
+    id = request.args.get("id")
+    search_runners = cassandra_helper.session.prepare('''
+    SELECT * FROM runr.runner_tracking
+    WHERE id=?
+    ''')
+    runner = cassandra_helper.session.execute(search_runners.bind({'id':id}))
+    return json.dumps(runner.current_rows[0]["lat_lng"])
+
 @index_api.route('/search_for_runner')
 def search_for_runner():
     query = request.args.get("query")
@@ -55,17 +82,21 @@ def search_for_runner():
             raise ValueError("Runner row mismatch")
         today = date.today()
         return json.dumps({
+            'id':runner.current_rows[0]["id"],
             'given_name':runner.current_rows[0]["given_name"],
             'weight': runner.current_rows[0]["weight"],
             'age': today.year - runner.current_rows[0]["birth_year"] - ((today.month, today.day) < (runner.current_rows[0]["birth_month"], runner.current_rows[0]["birth_day"])),
             'average_speed': runner_position[0]["average_speed"],
+            'lat_lng': runner_position[0]['lat_lng']
         })
     else:
         return json.dumps({
+            'id':'',
             'given_name':'',
             'age':'',
             'weight':'',
             'average_speed':'',
+            'lat_lng':'',
         })
 
 @index_api.route('/get_timer_tick')
