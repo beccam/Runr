@@ -43,7 +43,6 @@ function initMap() {
                 longitudeEnd: map.getBounds().getNorthEast().lng(),
                 radius: (Math.pow(2, 10 - map.zoom) * 4),
             },
-            async: false,
             success: function (data) {
                 jsonData = JSON.parse(data)
                 clearMarkers();
@@ -58,9 +57,7 @@ function initMap() {
                             labelContent: box.count.toString(),
                             labelAnchor: new google.maps.Point(15, 7),
                             labelClass: "labels", // the CSS class for the label
-                            labelInBackground: true,
                             icon: pinSymbol('#383838'),
-                            zIndex: 1,
                             title: 'clusterCount'
                         }));
                         google.maps.event.addListener(markers[markers.length - 1], "click", function (e) {
@@ -76,9 +73,9 @@ function initMap() {
                         },
                         success: function (data) {
                             var latlng = data.split(',')
-                            var runnerTrack = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};
-                            tracked_runner.setPosition(runnerTrack)
-
+                            var newPosition = {lat:parseFloat(latlng[0].substr(1)), lng: parseFloat(latlng[1])};
+                            tracked_runner.setPosition(newPosition)
+                            tracked_runner.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
                         }
                     });
                 }
@@ -129,7 +126,7 @@ function pinSymbol(color) {
         fillOpacity: 1,
         strokeColor: '#000',
         strokeWeight: 2,
-        scale: 20
+        scale: 20,
     };
 }
 function trackedRunner(color) {
@@ -139,7 +136,7 @@ function trackedRunner(color) {
         fillOpacity: 1,
         strokeColor: '#000',
         strokeWeight: 2,
-        scale: 10
+        scale: 10,
     };
 }
 $(document).ready(function () {
@@ -226,15 +223,11 @@ $(document).ready(function () {
 
                     var latlng = runner_object.lat_lng.split(',')
                     var runnerTrack = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};
-
                     tracked_runner = new MarkerWithLabel({
                         position: runnerTrack,
                         map: map,
                         labelContent: '',
-                        size: new google.maps.Size(10, 10),
-                        labelClass: "trackedRunner", // the CSS class for the label
                         labelInBackground: false,
-                        zIndex: 3,
                         icon: trackedRunner('#1CD434'),
                         title: 'Tracked Runner',
                     });
