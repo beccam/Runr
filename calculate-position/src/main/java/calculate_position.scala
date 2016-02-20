@@ -59,7 +59,7 @@ object position_calculator {
   }
   def update_position(x: CassandraRow, gps_locations: Array[CassandraRow], tick: Int) : CassandraRow =
   {
-    val position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8)));
+    val position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8))) * 1.5;
     if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.length) {
         var location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
         var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
@@ -69,7 +69,7 @@ object position_calculator {
             (x.getInt("distance_actual") + position_adjustment).toInt.toString(),
             (x.getDouble("distance_actual") + position_adjustment).toString(),
             (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees")),
-            (((x.getDouble("average_speed") + (position_adjustment)) / 2).toString())))
+            (((x.getDouble("average_speed") + (position_adjustment / 5)) / 2).toString())))
         return updated_position;
     }
     else

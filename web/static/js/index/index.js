@@ -51,7 +51,7 @@ function initMap() {
                 jsonData.clusters.forEach(function (box) {
                     if (box.count > 0) {
                         var countLatLng = {lat: box.latitude, lng: box.longitude};
-                        markers.push(new MarkerWithLabel({
+                        markers.push({marker:new MarkerWithLabel({
                             position: countLatLng,
                             map: map,
                             labelContent: box.count.toString(),
@@ -59,7 +59,8 @@ function initMap() {
                             labelClass: "labels", // the CSS class for the label
                             icon: pinSymbol('#383838'),
                             title: 'clusterCount'
-                        }));
+                        }),
+                        center:box.latitude + " " +box.longitude});
                         google.maps.event.addListener(markers[markers.length - 1], "click", function (e) {
                             //$("#clusterCount").text("Total Cluster Count: " + $(this)[0].labelContent)
                         });
@@ -107,13 +108,79 @@ function updateClusterMarkers() {
         },
         success: function (data) {
             jsonData = JSON.parse(data)
-            var i = 0;
-            jsonData.clusters.forEach(function (box) {
 
+            for(var i = 0; i < jsonData.clusters.length; i++)
+            {
+                var box = jsonData.clusters[i]
+                var exists = false;
+                var cluserId = 0;
+                $.each(markers, function (j, v) {
+                    if(markers[j].center == (box.latitude + " " + box.longitude))
+                    {
+                        exists = true;
+                        clusterId = j
+                    }
+                });
+
+                if(box.count > 0)
+                {
+                    if(exists)
+                    {
+                        markers[clusterId].marker.labelContent = box.count.toString();
+                        markers[clusterId].marker.label.draw()
+                    }
+                    else
+                    {
+                        var countLatLng = {lat: box.latitude, lng: box.longitude};
+                        markers.push({marker:new MarkerWithLabel({
+                            position: countLatLng,
+                            map: map,
+                            labelContent: box.count.toString(),
+                            labelAnchor: new google.maps.Point(15, 7),
+                            labelClass: "labels", // the CSS class for the label
+                            icon: pinSymbol('#383838'),
+                            title: 'clusterCount'
+                        }),
+                        center:box.latitude + " " +box.longitude});
+                        google.maps.event.addListener(markers[markers.length - 1], "click", function (e) {
+                            //$("#clusterCount").text("Total Cluster Count: " + $(this)[0].labelContent)
+                        });
+                    }
+                }else if (box.count == 0 && exists)
+                {
+                    markers[clusterId].marker.setMap(null);
+                    markers.splice(clusterId, 1);
+                    i--;
+                }
+            }
+
+            jsonData.clusters.forEach(function (box) {
+                var exists = false
+                var clusterId = 0;
+                $.each(markers, function (j, v) {
+                    if(markers[j].center == (box.latitude + " " + box.longitude))
+                    {
+                        exists = true;
+                        clusterId = j
+                    }
+                });
                 if (box.count > 0) {
-                    markers[i].labelContent = box.count.toString();
-                    markers[i].label.draw()
-                    i++;
+
+                    if(exists) {
+
+                        markers[clusterId].marker.labelContent = box.count.toString();
+                        markers[clusterId].marker.label.draw()
+                        i++;
+                    }
+                    else
+                    {
+
+                        i++;
+                    }
+                }else if(box.count > 0 && exists)
+                {
+                    markers[clusterId].marker.setMap(null);
+                    markers.splice(clusterId, 1);
                 }
             });
             if (tracked_runner != null) {
@@ -136,7 +203,7 @@ function updateClusterMarkers() {
 
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null)
+        markers[i].marker.setMap(null)
     }
     markers = []
 

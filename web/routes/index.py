@@ -197,6 +197,7 @@ def geospatial_search():
     radius = float(request.args.get('radius'))
     i = 0
     clusters = []
+    results = []
     coordinates = get_route_coordinates_helper()
     start = None
     end = None
@@ -206,22 +207,25 @@ def geospatial_search():
             start = currentCoordinate
             solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(currentCoordinate["lat"]) + ',' + str(currentCoordinate["lng"]) + ' d=' + str(radius) + '}"}'
             geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
-            clusters.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
+            results.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
             clusters.append(currentCoordinate)
         # if start != None and not insideMap(latitudeStart, latitudeEnd, longitudeStart, longitudeEnd, currentCoordinate["lat"], currentCoordinate["lng"]):
         #     break;
         if len(clusters) > 0 and insideMap(latitudeStart, latitudeEnd, longitudeStart, longitudeEnd, currentCoordinate["lat"], currentCoordinate["lng"]):
+
             currentLatLon = LatLon(Latitude(currentCoordinate["lat"]), Longitude(currentCoordinate["lng"]))
             lastClusterLatLon = LatLon(Latitude(clusters[-1]["lat"]), Longitude(clusters[-1]["lng"]))
-            if abs(currentLatLon.distance(lastClusterLatLon)) > radius * 2:
+            distance = abs(currentLatLon.distance(lastClusterLatLon))
+            if distance > radius * 2:
                 solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(currentCoordinate["lat"]) + ',' + str(currentCoordinate["lng"]) + ' d=' + str(radius) + '}"}'
                 geoCount = cassandra_helper.session.execute("select count(*) from runr.runner_tracking where solr_query='" + solrParams + "'")
-                clusters.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
+                # if geoCount[0]["count"] > 0:
+                results.append({"latitude":currentCoordinate["lat"], "longitude":currentCoordinate["lng"], "count":geoCount[0]["count"]})
                 clusters.append(currentCoordinate)
         i += 10
 
 
-    return json.dumps({"clusters": clusters})
+    return json.dumps({"clusters": results})
 
 def insideMap(latStart, latEnd, lngStart, lngEnd, lat, lng):
     if lat < latStart and lat > latEnd and lng > lngStart and lng < lngEnd:
