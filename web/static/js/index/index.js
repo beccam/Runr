@@ -193,7 +193,6 @@ function updateClusterMarkers() {
                         var latlng = data.split(',')
                         var newPosition = {lat:parseFloat(latlng[0].substr(1)), lng: parseFloat(latlng[1])};
                         tracked_runner.setPosition(newPosition)
-                        tracked_runner.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
                     }
                 });
             }
@@ -317,14 +316,21 @@ $(document).ready(function () {
 
                     var latlng = runner_object.lat_lng.split(',')
                     var runnerTrack = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};
-                    tracked_runner = new MarkerWithLabel({
-                        position: runnerTrack,
-                        map: map,
-                        labelContent: '',
-                        labelInBackground: false,
-                        icon: trackedRunner('#1CD434'),
-                        title: 'Tracked Runner',
-                    });
+                    if(tracked_runner == null) {
+                        tracked_runner = new MarkerWithLabel({
+                            position: runnerTrack,
+                            map: map,
+                            labelContent: '',
+                            labelInBackground: false,
+                            icon: trackedRunner('#1CD434'),
+                            title: 'Tracked Runner',
+                        });
+                        tracked_runner.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+
+                    }
+                    else {
+                        tracked_runner.setPosition(runnerTrack);
+                    }
                 }
             }
         })
