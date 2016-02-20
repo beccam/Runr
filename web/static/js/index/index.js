@@ -149,18 +149,22 @@ $(document).ready(function () {
             delay: 250,
             data: function (params) {
                 return {
-                    q: params.term, // search term
+                    'spellcheck.q': params.term, // search term
                     wt: 'json',
-                    'json.wrf': "callback"
+                    'json.wrf': "callback",
+                    'shards.qt':'/suggest',
                 };
             },
             processResults: function (data, params) {
+                $('#runnerSearch').empty();
                 if (data.spellcheck.suggestions.length > 0) {
                     suggestions = []
                     $.each(data.spellcheck.suggestions[1].suggestion, function (i, v) {
+                        var suggestionArray = v.word.split('_')
                         suggestions.push({
                             "id": i,
-                            "suggestion": v
+                            "suggestion": suggestionArray[0],
+                            "runner_id": suggestionArray[1]
                         })
                     });
                     return {
@@ -202,7 +206,7 @@ $(document).ready(function () {
     $("#runnerSearch").on("select2:select", function (e) {
         var selection = $($(this)).select2('data')
         if (selection.length == 1) {
-            searchForRunner(selection[0].suggestion)
+            searchForRunner(selection[0].runner_id)
         }
     });
 

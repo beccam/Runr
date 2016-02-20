@@ -20,9 +20,9 @@
 <fields>
 <field indexed="true" multiValued="false" name="cluster" stored="true" type="TrieIntField"/>
 <field indexed="true" multiValued="false" name="id" stored="true" type="StrField"/>
-<field indexed="true" multiValued="false" name="given_name" stored="true" type="TextField"/>
-<field name="given_name_autocomplete" type="text_auto" indexed="true" stored="true" multiValued="false" />
-<copyField source="given_name" dest="given_name_autocomplete" />
+<field indexed="true" multiValued="false" name="given_name_id" stored="true" type="TextField"/>
+<field name="given_name_id_autocomplete" type="text_auto" indexed="true" stored="true" multiValued="false" />
+<copyField source="given_name_id" dest="given_name_id_autocomplete" />
 </fields>
 <uniqueKey>id</uniqueKey>
 </schema>

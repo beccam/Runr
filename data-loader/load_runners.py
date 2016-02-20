@@ -32,12 +32,12 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
                     "birth_day":int(row[9]),
                     "weight":int(row[10]),
                     "height":int(row[11]),
-                    "lat_lng": "40.61572,-74.03123",
+                    "given_name_id": row[3] + "_" + row[0],
                 }
 
             insert_runner = session.prepare('''
                 INSERT INTO runr.runners
-                    (id, first_name, last_name, given_name, birth_country, birth_state, birth_city, birth_year, birth_month, birth_day, weight, height, lat_lng)
+                    (id, first_name, last_name, given_name, birth_country, birth_state, birth_city, birth_year, birth_month, birth_day, weight, height,given_name_id)
                 VALUES
                     (?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''')

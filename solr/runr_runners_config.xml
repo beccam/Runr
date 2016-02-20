@@ -516,10 +516,9 @@
       <str name="name">suggest</str>
       <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
       <str name="lookupImpl">org.apache.solr.spelling.suggest.jaspell.JaspellLookup</str>
-      <str name="field">given_name_autocomplete</str>
+      <str name="field">given_name_id_autocomplete</str>
       <str name="storeDir">suggest</str>
       <str name="buildOnCommit">true</str>
-      <float name="threshold">0.0</float>
     </lst>
   </searchComponent>
   <requestHandler class="org.apache.solr.handler.component.SearchHandler" name="/suggest">
@@ -530,7 +529,7 @@
       <str name="spellcheck.extendedResults">true</str>
       <str name="spellcheck.count">20</str>
     </lst>
-    <arr name="components">
+    <arr name="last-components">
       <str>suggest</str>
     </arr>
   </requestHandler>

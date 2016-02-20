@@ -71,12 +71,12 @@ def search_for_runner():
     WHERE solr_query=?
     ''')
     runner = cassandra_helper.session.execute(search_runners.bind({
-        'solr_query': 'given_name: "' + query + '"'
+        'solr_query': 'id: "' + query + '"'
     }))
 
     if len(runner.current_rows) > 0:
         runner_position = cassandra_helper.session.execute(search_runner_tracking.bind({
-            'solr_query': 'id: "' + runner.current_rows[0]["id"] + '"'
+            'solr_query': 'id: "' + query + '"'
         }))
         if len(runner_position.current_rows) == 0:
             raise ValueError("Runner row mismatch")

@@ -46,7 +46,8 @@ CREATE TABLE runr.runners (
     weight int,
     height int,
     cluster int,
-    cluster_dist double
+    cluster_dist double,
+    given_name_id text
 );
 
 CREATE TABLE runr.projected_finish (
