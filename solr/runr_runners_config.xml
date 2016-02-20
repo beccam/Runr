@@ -515,7 +515,7 @@
     <lst name="spellchecker">
       <str name="name">suggest</str>
       <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
-      <str name="lookupImpl">org.apache.solr.spelling.suggest.tst.TSTLookupFactory</str>
+      <str name="lookupImpl">org.apache.solr.spelling.suggest.jaspell.JaspellLookup</str>
       <str name="field">given_name_autocomplete</str>
       <str name="storeDir">suggest</str>
       <str name="buildOnCommit">true</str>
