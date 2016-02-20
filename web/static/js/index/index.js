@@ -74,7 +74,16 @@ function initMap() {
                         success: function (data) {
                             var latlng = data.split(',')
                             var newPosition = {lat:parseFloat(latlng[0].substr(1)), lng: parseFloat(latlng[1])};
-                            tracked_runner.setPosition(newPosition)
+                            tracked_runner.setMap(null)
+                            tracked_runner = new MarkerWithLabel({
+                                position: newPosition,
+                                map: map,
+                                labelContent: '',
+                                labelInBackground: false,
+                                icon: trackedRunner('#1CD434'),
+                                title: 'Tracked Runner',
+                            });
+                            //tracked_runner.setPosition(newPosition)
                             tracked_runner.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
                         }
                     });
@@ -107,6 +116,20 @@ function updateClusterMarkers() {
                     i++;
                 }
             });
+            if (tracked_runner != null) {
+                $.ajax({
+                    url: 'get_runner_lat_lon',
+                    data: {
+                        'id': $("#runner_id").data("id")
+                    },
+                    success: function (data) {
+                        var latlng = data.split(',')
+                        var newPosition = {lat:parseFloat(latlng[0].substr(1)), lng: parseFloat(latlng[1])};
+                        tracked_runner.setPosition(newPosition)
+                        tracked_runner.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+                    }
+                });
+            }
         }
     });
 }
@@ -143,7 +166,7 @@ $(document).ready(function () {
 
     $("#runnerSearch").select2({
         ajax: {
-            url: "http://www." + location.hostname + ":8983/solr/runr.runners/suggest",
+            url: "http://" + location.hostname + ":8983/solr/runr.runners/suggest",
             dataType: "jsonp",
             jsonpCallback: 'callback',
             delay: 250,
