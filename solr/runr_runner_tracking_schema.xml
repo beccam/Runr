@@ -16,14 +16,10 @@
 </types>
 <fields>
 <field indexed="true" multiValued="false" name="id" stored="true" type="StrField"/>
-<field indexed="true" multiValued="false" name="date" stored="true" type="TrieDateField"/>
 <field indexed="true" multiValued="false" name="lat_lng" stored="true" type="location"/>
 <dynamicField name="*_coordinate"  type="TrieDoubleField" indexed="true"  stored="false"/>
-<field indexed="true" multiValued="false" name="speed" stored="true" type="TrieDoubleField"/>
-<field indexed="true" multiValued="false" name="starting_position" stored="true" type="TrieIntField"/>
-<field indexed="true" multiValued="false" name="distance_actual" stored="true" type="TrieDoubleField"/>
 <field indexed="true" multiValued="false" name="distance" stored="true" type="TrieLongField"/>
 </fields>
-<uniqueKey>(id,speed)</uniqueKey>
+<uniqueKey>id</uniqueKey>
 </schema>
 

@@ -17,7 +17,7 @@ CREATE TABLE runr.runner_tracking (
     starting_position int,
     speed double,
     average_speed double,
-    PRIMARY KEY (id, speed)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE runr.runner_tracking_history (
@@ -45,7 +45,6 @@ CREATE TABLE runr.runners (
     birth_day int,
     weight int,
     height int,
-    lat_lng text,
     cluster int,
     cluster_dist double
 );

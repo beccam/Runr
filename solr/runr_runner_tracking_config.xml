@@ -90,9 +90,9 @@
   <directoryFactory class="solr.StandardDirectoryFactory" name="DirectoryFactory"/>
 
   <indexConfig>
-    <rt>false</rt>
+    <rt>true</rt>
     <useCompoundFile>false</useCompoundFile>
-    <ramBufferSizeMB>512</ramBufferSizeMB>
+    <ramBufferSizeMB>2000</ramBufferSizeMB>
     <mergeFactor>10</mergeFactor>
 
     <!-- Unlock On Startup
