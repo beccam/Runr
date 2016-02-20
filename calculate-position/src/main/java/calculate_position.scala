@@ -69,7 +69,7 @@ object position_calculator {
             (x.getInt("distance_actual") + position_adjustment).toInt.toString(),
             (x.getDouble("distance_actual") + position_adjustment).toString(),
             (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees")),
-            (((x.getDouble("average_speed") + (position_adjustment / 5)) / 2).toString())))
+            (((x.getDouble("average_speed") + (position_adjustment / 1.5)) / 2).toString())))
         return updated_position;
     }
     else

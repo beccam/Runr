@@ -49,7 +49,7 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
                     "lat_lng": "40.61572,-74.03123",
                     "distance": 0,
                     "distance_actual": 0,
-                    "starting_position": i/100,
+                    "starting_position": (i/100) + ((i/100) * 10),
                     "average_speed": Decimal(row[12])
                 }
 
