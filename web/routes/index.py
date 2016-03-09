@@ -49,6 +49,26 @@ def get_scatter_plot_data():
         results['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"])))
     return json.dumps(results)
 
+@index_api.route('/get_cluster_runners')
+def get_cluster_runners():
+    lat = request.args.get("lat")
+    lng = request.args.get("lng")
+    radius = request.args.get("radius")
+
+    solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(lat) + ',' + str(lng) + ' d=' + str(radius) + '}"}'
+    cluster_runners = cassandra_helper.session.execute("select id from runr.runner_tracking where solr_query='" + solrParams + "'")
+
+    runners = []
+    i = 0
+    for runner in cluster_runners:
+        runners.append([
+           str(runner['id'])
+        ])
+
+
+    return jsonify(data=runners)
+
+
 @index_api.route('/get_runner_lat_lon')
 def get_runner_lat_lon():
     id = request.args.get("id")
@@ -105,7 +125,11 @@ def get_timer_tick():
     SELECT * FROM runr.time_elapsed
     WHERE counter_name='time_elapsed'
     ''')
-    return json.dumps(cassandra_helper.session.execute(get_timer_counter)[0]["time_elapsed"])
+    timer_data = cassandra_helper.session.execute(get_timer_counter)
+    if len(timer_data.current_rows) > 0:
+        return json.dumps(timer_data[0]["time_elapsed"])
+    else:
+        return json.dumps(0)
 
 @index_api.route('/get_route_coordinates')
 def get_route_coordinates():

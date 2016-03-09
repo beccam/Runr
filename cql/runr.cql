@@ -43,11 +43,12 @@ CREATE TABLE runr.runners (
     birth_year int,
     birth_month int,
     birth_day int,
+    age int,
     weight int,
     height int,
     cluster int,
     cluster_dist double,
-    given_name_id text
+    given_name_id text,
 );
 
 CREATE TABLE runr.projected_finish (

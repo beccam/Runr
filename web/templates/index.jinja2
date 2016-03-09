@@ -45,6 +45,7 @@
             left: 0px;
             z-index: 2;
         }
+
         .nav {
             height: 45px;
             width: 100%;
@@ -54,10 +55,7 @@
             position: absolute;
             z-index: 3;
             background: #009db2; /* Old browsers */
-{#            background: -moz-linear-gradient(left, #ffffff 11%, #ffffff 11%, #009db2 11%); /* FF3.6-15 */#}
-{#            background: -webkit-linear-gradient(left, #ffffff 11%, #ffffff 11%, #009db2 11%); /* Chrome10-25,Safari5.1-6 */#}
-{#            background: linear-gradient(to right, #ffffff 11%, #ffffff 11%, #009db2 11%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */#}
-{#            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#009db2', GradientType=1); /* IE6-9 */#}
+        {#            background: -moz-linear-gradient(left, #ffffff 11%, #ffffff 11%, #009db2 11%); /* FF3.6-15 */#}{#            background: -webkit-linear-gradient(left, #ffffff 11%, #ffffff 11%, #009db2 11%); /* Chrome10-25,Safari5.1-6 */#}{#            background: linear-gradient(to right, #ffffff 11%, #ffffff 11%, #009db2 11%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */#}{#            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#009db2', GradientType=1); /* IE6-9 */#}
 
         }
 
@@ -71,13 +69,12 @@
             white-space: nowrap;
 
         }
+
         .trackedRunner {
             color: white;
-            max-width:10px;
-
+            max-width: 10px;
 
         }
-
 
     </style>
 
@@ -107,11 +104,10 @@
             <div class="container">
                 <div class="row">
 
-                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all"
-                         class="col-md-2 col-md-offset-0">
+                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 ">
                         <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
                         <div style="float:left; padding:10px; padding-bottom:0px">
-                            <div id="runner_id" ></div>
+                            <div id="runner_id"></div>
                             <b id="runner_name" style="color:white"></b>
                             </br>
                             <div id="runner_age" style="color:white">Age:</div>
@@ -124,6 +120,17 @@
                             <div style="color:white">Projected Time to Finish:</div>
 
                         </div>
+                    </div>
+                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all; position:absolute; "
+                         class=" col-md-offset-10">
+                        <table id="runner_cluster_table" class="display" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                </tr>
+                            </thead>
+
+                        </table>
                     </div>
                     <div id="expandedChartView"
                          style="background-color:#4A4A4A; display:none; border-radius:4px; margin-top: 15px; margin-bottom:15px; pointer-events: all;  height:60%; position:absolute; top:10%"
@@ -189,9 +196,9 @@
     </div>
     <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script type="text/javascript" src="static/js/index/index.js"></script>
-{#    <script type="text/javascript" src="static/js/index/map.js"></script>#}
-{#    <script type="text/javascript" src="static/js/index/timer.js"></script>#}
-{#    <script type="text/javascript" src="static/js/index/charts.js"></script>#}
+    {#    <script type="text/javascript" src="static/js/index/map.js"></script>#}
+    {#    <script type="text/javascript" src="static/js/index/timer.js"></script>#}
+    {#    <script type="text/javascript" src="static/js/index/charts.js"></script>#}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuNqpFE8a9dKuIINC91jdzd0IWJ1js-bw&callback=initMap&libraries=geometry"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
 
@@ -199,6 +206,7 @@
 
         setInterval(updateTimer, 1000)
         setInterval(updateClusterMarkers, 1500)
+
     </script>
 
     </body>

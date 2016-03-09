@@ -1,5 +1,6 @@
 from cassandra.cluster import Cluster
 from decimal import *
+from datetime import date
 import time
 from datetime import datetime, timedelta
 import csv
@@ -16,7 +17,7 @@ print("Loading Runners")
 with open('runner_stats_final.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     i = 0
-
+    today = date.today()
     for row in reader:
         if row[10] != 'NaN' and row[11] != 'NaN' and row[12] != 'NaN':
             runner = {
@@ -32,14 +33,15 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
                     "birth_day":int(row[9]),
                     "weight":int(row[10]),
                     "height":int(row[11]),
+                    'age': today.year - int(row[7]) - ((today.month, today.day) < (int(row[8]), int(row[9]))),
                     "given_name_id": row[3] + "_" + row[0],
                 }
 
             insert_runner = session.prepare('''
                 INSERT INTO runr.runners
-                    (id, first_name, last_name, given_name, birth_country, birth_state, birth_city, birth_year, birth_month, birth_day, weight, height,given_name_id)
+                    (id, first_name, last_name, given_name, birth_country, birth_state, birth_city, birth_year, birth_month, birth_day, weight, height,given_name_id,age)
                 VALUES
-                    (?,?,?,?,?,?,?,?,?,?,?,?,?)
+                    (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''')
             session.execute(insert_runner.bind(runner))
             position = {

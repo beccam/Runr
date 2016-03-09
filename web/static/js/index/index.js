@@ -51,7 +51,7 @@ function initMap() {
                 jsonData.clusters.forEach(function (box) {
                     if (box.count > 0) {
                         var countLatLng = {lat: box.latitude, lng: box.longitude};
-                        markers.push({marker:new MarkerWithLabel({
+                        currentMarker = new MarkerWithLabel({
                             position: countLatLng,
                             map: map,
                             labelContent: box.count.toString(),
@@ -59,11 +59,32 @@ function initMap() {
                             labelClass: "labels", // the CSS class for the label
                             icon: pinSymbol('#383838'),
                             title: 'clusterCount'
-                        }),
-                        center:box.latitude + " " +box.longitude});
-                        google.maps.event.addListener(markers[markers.length - 1], "click", function (e) {
-                            //$("#clusterCount").text("Total Cluster Count: " + $(this)[0].labelContent)
+                        })
+                        $(currentMarker).data("lat", box.latitude)
+                        $(currentMarker).data("lng", box.longitude)
+                        google.maps.event.addListener(currentMarker, "click", function (e) {
+                                                       $("#runner_cluster_table").DataTable(({
+                                ajax: {
+                                    url: '/get_cluster_runners',
+                                    data:{lat: $(this).data("lat"),
+                                    lng: $(this).data("lng"),
+                                    radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                },
+
+                                //'bPaginate': false,
+                                'bLengthChange': false,
+                                'bInfo': false,
+                                'bProcessing': false,
+                                'bAutoWidth': false,
+                                'bServerSide': false,
+                                'bFilter': false,
+                                //'bJQueryUI': true,
+                                'sPaginationType': "full_numbers",
+                                'iDisplayLength': 5,
+                            }));
                         });
+                        markers.push({marker:currentMarker, center:box.latitude + " " +box.longitude});
+
                     }
                 });
                 if (tracked_runner != null) {
@@ -97,6 +118,7 @@ function initMap() {
 }
 
 function updateClusterMarkers() {
+
     $.ajax({
         url: '/geospatial_search',
         data: {
@@ -132,7 +154,7 @@ function updateClusterMarkers() {
                     else
                     {
                         var countLatLng = {lat: box.latitude, lng: box.longitude};
-                        markers.push({marker:new MarkerWithLabel({
+                        currentMarker = new MarkerWithLabel({
                             position: countLatLng,
                             map: map,
                             labelContent: box.count.toString(),
@@ -140,11 +162,31 @@ function updateClusterMarkers() {
                             labelClass: "labels", // the CSS class for the label
                             icon: pinSymbol('#383838'),
                             title: 'clusterCount'
-                        }),
-                        center:box.latitude + " " +box.longitude});
-                        google.maps.event.addListener(markers[markers.length - 1], "click", function (e) {
-                            //$("#clusterCount").text("Total Cluster Count: " + $(this)[0].labelContent)
+                        })
+                        $(currentMarker).data("lat", box.latitude)
+                        $(currentMarker).data("lng", box.longitude)
+                        google.maps.event.addListener(currentMarker, "click", function (e) {
+                           $("#runner_cluster_table").DataTable(({
+                                ajax: {
+                                    url: '/get_cluster_runners',
+                                    data:{lat: $(this).data("lat"),
+                                    lng: $(this).data("lng"),
+                                    radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                },
+                                'bPaginate': false,
+                                'bLengthChange': false,
+                                'bInfo': false,
+                                'bProcessing': false,
+                                'bAutoWidth': false,
+                                'bServerSide': false,
+                                'bFilter': false,
+                                'bJQueryUI': true,
+                                'sPaginationType': "full_numbers",
+                                'iDisplayLength': 5,
+                            }));
                         });
+                        markers.push({marker:currentMarker, center:box.latitude + " " +box.longitude});
+
                     }
                 }else if (box.count == 0 && exists)
                 {
