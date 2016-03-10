@@ -63,15 +63,19 @@ function initMap() {
                         $(currentMarker).data("lat", box.latitude)
                         $(currentMarker).data("lng", box.longitude)
                         google.maps.event.addListener(currentMarker, "click", function (e) {
+                            $("#clusterLocation").data("lat", $(this).data("lat"))
+                            $("#clusterLocation").data("lng", $(this).data("lng"))
                             if(runners_table == undefined)
                             {
                                 $.fn.DataTable.ext.pager.numbers_length = 3;
                                 runners_table = $("#runner_cluster_table").DataTable({
                                     ajax: {
                                         url: '/get_cluster_runners',
-                                        data:{lat: $(this).data("lat"),
-                                        lng: $(this).data("lng"),
-                                        radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                        data: function(d) {
+                                            d.lat = $("#clusterLocation").data("lat");
+                                            d.lng = $("#clusterLocation").data("lng");
+                                            d.radius = (Math.pow(2, 10 - map.zoom) * 4);
+                                        }
                                     },
 
                                     //'bPaginate': false,
@@ -86,12 +90,10 @@ function initMap() {
                                     'iDisplayLength': 5,
                                 });
                                 $("#runner_table_overlay").show()
-
                             }
                             else
                             {
-                              runners_table.ajax.reload();
-
+                                runners_table.ajax.reload();
                             }
                         });
                         markers.push({marker:currentMarker, center:box.latitude + " " +box.longitude});
@@ -159,6 +161,8 @@ function updateClusterMarkers() {
                     {
                         markers[clusterId].marker.labelContent = box.count.toString();
                         markers[clusterId].marker.label.draw()
+                        markers[clusterId].marker.data("lat", box.latitude)
+                        markers[clusterId].marker.data("lng", box.longitude)
                     }
                     else
                     {
@@ -175,15 +179,19 @@ function updateClusterMarkers() {
                         $(currentMarker).data("lat", box.latitude)
                         $(currentMarker).data("lng", box.longitude)
                         google.maps.event.addListener(currentMarker, "click", function (e) {
+                            $("#clusterLocation").data("lat", $(this).data("lat"))
+                            $("#clusterLocation").data("lng", $(this).data("lng"))
                             if(runners_table == undefined)
                             {
                                 $.fn.DataTable.ext.pager.numbers_length = 3;
                                 runners_table = $("#runner_cluster_table").DataTable({
                                     ajax: {
                                         url: '/get_cluster_runners',
-                                        data:{lat: $(this).data("lat"),
-                                        lng: $(this).data("lng"),
-                                        radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                        data: function(d) {
+                                            d.lat = $("#clusterLocation").data("lat");
+                                            d.lng = $("#clusterLocation").data("lng");
+                                            d.radius = (Math.pow(2, 10 - map.zoom) * 4);
+                                        }
                                     },
 
                                     //'bPaginate': false,
@@ -201,8 +209,7 @@ function updateClusterMarkers() {
                             }
                             else
                             {
-                              runners_table.ajax.reload();
-
+                                runners_table.ajax.reload();
                             }
 
                         });
