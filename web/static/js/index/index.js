@@ -63,25 +63,36 @@ function initMap() {
                         $(currentMarker).data("lat", box.latitude)
                         $(currentMarker).data("lng", box.longitude)
                         google.maps.event.addListener(currentMarker, "click", function (e) {
-                                                       $("#runner_cluster_table").DataTable(({
-                                ajax: {
-                                    url: '/get_cluster_runners',
-                                    data:{lat: $(this).data("lat"),
-                                    lng: $(this).data("lng"),
-                                    radius: (Math.pow(2, 10 - map.zoom) * 4),}
-                                },
+                            if(runners_table == undefined)
+                            {
+                                $.fn.DataTable.ext.pager.numbers_length = 3;
+                                runners_table = $("#runner_cluster_table").DataTable({
+                                    ajax: {
+                                        url: '/get_cluster_runners',
+                                        data:{lat: $(this).data("lat"),
+                                        lng: $(this).data("lng"),
+                                        radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                    },
 
-                                //'bPaginate': false,
-                                'bLengthChange': false,
-                                'bInfo': false,
-                                'bProcessing': false,
-                                'bAutoWidth': false,
-                                'bServerSide': false,
-                                'bFilter': false,
-                                //'bJQueryUI': true,
-                                'sPaginationType': "full_numbers",
-                                'iDisplayLength': 5,
-                            }));
+                                    //'bPaginate': false,
+                                    'bLengthChange': false,
+                                    'bInfo': false,
+                                    'bProcessing': false,
+                                    'bAutoWidth': false,
+                                    'bServerSide': false,
+                                    'bFilter': false,
+                                    //'bJQueryUI': true,
+                                    'sPaginationType': "simple_numbers",
+                                    'iDisplayLength': 5,
+                                });
+                                $("#runner_table_overlay").show()
+
+                            }
+                            else
+                            {
+                              runners_table.ajax.reload();
+
+                            }
                         });
                         markers.push({marker:currentMarker, center:box.latitude + " " +box.longitude});
 
@@ -111,10 +122,8 @@ function initMap() {
                     });
                 }
             }
-        });
-
-
-    });
+        })
+    })
 }
 
 function updateClusterMarkers() {
@@ -166,24 +175,36 @@ function updateClusterMarkers() {
                         $(currentMarker).data("lat", box.latitude)
                         $(currentMarker).data("lng", box.longitude)
                         google.maps.event.addListener(currentMarker, "click", function (e) {
-                           $("#runner_cluster_table").DataTable(({
-                                ajax: {
-                                    url: '/get_cluster_runners',
-                                    data:{lat: $(this).data("lat"),
-                                    lng: $(this).data("lng"),
-                                    radius: (Math.pow(2, 10 - map.zoom) * 4),}
-                                },
-                                'bPaginate': false,
-                                'bLengthChange': false,
-                                'bInfo': false,
-                                'bProcessing': false,
-                                'bAutoWidth': false,
-                                'bServerSide': false,
-                                'bFilter': false,
-                                'bJQueryUI': true,
-                                'sPaginationType': "full_numbers",
-                                'iDisplayLength': 5,
-                            }));
+                            if(runners_table == undefined)
+                            {
+                                $.fn.DataTable.ext.pager.numbers_length = 3;
+                                runners_table = $("#runner_cluster_table").DataTable({
+                                    ajax: {
+                                        url: '/get_cluster_runners',
+                                        data:{lat: $(this).data("lat"),
+                                        lng: $(this).data("lng"),
+                                        radius: (Math.pow(2, 10 - map.zoom) * 4),}
+                                    },
+
+                                    //'bPaginate': false,
+                                    'bLengthChange': false,
+                                    'bInfo': false,
+                                    'bProcessing': false,
+                                    'bAutoWidth': false,
+                                    'bServerSide': false,
+                                    'bFilter': false,
+                                    //'bJQueryUI': true,
+                                    'sPaginationType': "simple_numbers",
+                                    'iDisplayLength': 5,
+                                });
+                                $("#runner_table_overlay").show()
+                            }
+                            else
+                            {
+                              runners_table.ajax.reload();
+
+                            }
+
                         });
                         markers.push({marker:currentMarker, center:box.latitude + " " +box.longitude});
 
@@ -355,6 +376,7 @@ $(document).ready(function () {
                     $("#runner_average_speed").text("Average Speed:" + runner_object.average_speed + " Km/hr");
                     $("#runner_age").text("Age:" + runner_object.age)
                     $("#runner_id").data("id", runner_object.id)
+                    $("#runner_projected_finish").text("Projected Finish:" + runner_object.projected_finish)
 
                     var latlng = runner_object.lat_lng.split(',')
                     var runnerTrack = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};

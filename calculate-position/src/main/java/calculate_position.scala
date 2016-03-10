@@ -10,6 +10,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming._
 import com.datastax.spark.connector.streaming._
 import concurrent._
+import scala.collection.mutable.ListBuffer
 import scala.util._
 import scala.math
 
@@ -48,6 +49,16 @@ object position_calculator {
         updated_positions = runner_positions.map(x => update_position(x, gps_locations,tick))
 
       updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"))
+      var sorted_runners = updated_positions.sortBy(_.getDouble("distance_ratio")).collect()
+
+      val predictions = new ListBuffer[(Int, String)]
+      var j = 0
+      for(j <- 0 to sorted_runners.length - 1)
+      {
+        var row = (j, sorted_runners(j).getString("id"))
+        predictions += row
+      }
+      sc.parallelize(predictions).saveToCassandra("runr", "projected_finish", SomeColumns("finish_place", "id"))
 
       val duration = (System.nanoTime - start) / 1e6
 
@@ -62,27 +73,29 @@ object position_calculator {
     val position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8))) * 1.5;
     if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.length) {
         var location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
-        var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
+        var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed", "distance_ratio"),
           Array(x.getString("id"),
             new Date(),
             x.getDecimal("speed").toString(),
             (x.getInt("distance_actual") + position_adjustment).toInt.toString(),
             (x.getDouble("distance_actual") + position_adjustment).toString(),
             (location.getString("latitude_degrees") + "," + location.getString("longitude_degrees")),
-            (((x.getDouble("average_speed") + (position_adjustment / 1.5)) / 2).toString())))
+            (((x.getDouble("average_speed") + (position_adjustment / 1.5)) / 2).toString()),
+            ((38515 - (x.getDouble("distance_actual") + position_adjustment))/((x.getDouble("average_speed") + (position_adjustment / 1.5)) / 2)).toString()))
         return updated_position;
     }
     else
     {
 
-      var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
+      var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed", "distance_ratio"),
         Array(x.getString("id"),
           new Date(),
           x.getDecimal("speed").toString(),
           (x.getInt("distance_actual")).toString(),
           (x.getDouble("distance_actual")).toString(),
           (x.getString("lat_lng")),
-          (x.getDouble("average_speed").toString())))
+          (x.getDouble("average_speed").toString()),
+          ((38515 - (x.getDouble("distance_actual") + position_adjustment))/((x.getDouble("average_speed") + (position_adjustment / 1.5)) / 2)).toString()))
       return updated_position;
     }
   }

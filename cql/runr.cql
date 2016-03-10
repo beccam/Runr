@@ -10,6 +10,7 @@ CREATE TABLE runr.runner_predictions (
 
 CREATE TABLE runr.runner_tracking (
     id text,
+    given_name text,
     date timestamp,
     lat_lng text,
     distance bigint,
@@ -52,8 +53,8 @@ CREATE TABLE runr.runners (
 );
 
 CREATE TABLE runr.projected_finish (
-    finish_place int PRIMARY KEY,
-    id text,
+    id text PRIMARY KEY,
+    finish_place int ,
     finish_time double,
     speed double,
 );

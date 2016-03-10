@@ -46,6 +46,7 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
             session.execute(insert_runner.bind(runner))
             position = {
                     "id":row[0],
+                    "given_name":row[3],
                     "date":datetime.utcnow(),
                     "speed":Decimal(row[12]),
                     "lat_lng": "40.61572,-74.03123",
@@ -57,11 +58,12 @@ with open('runner_stats_final.csv', 'rb') as csvfile:
 
             initialize_runner_position = session.prepare('''
                 INSERT INTO runr.runner_tracking
-                    (id, date, speed, lat_lng, distance, distance_actual, starting_position, average_speed)
+                    (id, given_name, date, speed, lat_lng, distance, distance_actual, starting_position, average_speed)
                 VALUES
-                    (?,?,?,?,?,?,?,?)
+                    (?,?,?,?,?,?,?,?,?)
             ''')
             i += 1
 
 
             session.execute(initialize_runner_position.bind(position))
+

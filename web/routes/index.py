@@ -7,7 +7,7 @@ import datetime
 from datetime import date
 from orderedset import OrderedSet
 from collections import OrderedDict
-from cassandra.query import ValueSequence
+from cassandra.query import ValueSequence, SimpleStatement
 from helpers import cassandra_helper
 try: import simplejson as json
 except ImportError: import json
@@ -56,13 +56,14 @@ def get_cluster_runners():
     radius = request.args.get("radius")
 
     solrParams = '{"q": "*:*", "fq": "{!bbox sfield=lat_lng pt=' + str(lat) + ',' + str(lng) + ' d=' + str(radius) + '}"}'
-    cluster_runners = cassandra_helper.session.execute("select id from runr.runner_tracking where solr_query='" + solrParams + "'")
+    cluster_runners = cassandra_helper.session.execute(SimpleStatement("select given_name from runr.runner_tracking where solr_query='" + solrParams + "' LIMIT 10113"))
 
     runners = []
     i = 0
+
     for runner in cluster_runners:
         runners.append([
-           str(runner['id'])
+           str(runner["given_name"])
         ])
 
 
@@ -90,6 +91,10 @@ def search_for_runner():
     SELECT * FROM runr.runner_tracking
     WHERE solr_query=?
     ''')
+    search_runner_finish = cassandra_helper.session.prepare('''
+    SELECT * FROM runr.projected_finish
+    WHERE id=?
+    ''')
     runner = cassandra_helper.session.execute(search_runners.bind({
         'solr_query': 'id: "' + query + '"'
     }))
@@ -98,7 +103,10 @@ def search_for_runner():
         runner_position = cassandra_helper.session.execute(search_runner_tracking.bind({
             'solr_query': 'id: "' + query + '"'
         }))
-        if len(runner_position.current_rows) == 0:
+        runner_projected_finish = cassandra_helper.session.execute(search_runner_finish.bind({
+            "id":query
+        }))
+        if len(runner_position.current_rows) == 0 or len(runner_projected_finish.current_rows) == 0:
             raise ValueError("Runner row mismatch")
         today = date.today()
         return json.dumps({
@@ -107,6 +115,7 @@ def search_for_runner():
             'weight': runner.current_rows[0]["weight"],
             'age': today.year - runner.current_rows[0]["birth_year"] - ((today.month, today.day) < (runner.current_rows[0]["birth_month"], runner.current_rows[0]["birth_day"])),
             'average_speed': runner_position[0]["average_speed"],
+            'projected_finish': runner_projected_finish[0]["finish_place"],
             'lat_lng': runner_position[0]['lat_lng']
         })
     else:
@@ -116,6 +125,7 @@ def search_for_runner():
             'age':'',
             'weight':'',
             'average_speed':'',
+            'projected_finish':'',
             'lat_lng':'',
         })
 
