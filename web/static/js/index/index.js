@@ -422,26 +422,35 @@ function pad(n, width) {
     return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
 }
 
-$.ajax({
+load_scatter_plot('scatterChart');
+function load_scatter_plot(element)
+{
+    $.ajax({
     url: '/get_scatter_plot_data',
     success: function (data) {
         var parsedData = JSON.parse(data)
-        var trace = {
-            x: parsedData.x,
-            y: parsedData.y,
-            z: parsedData.z,
-            mode: 'markers',
-            marker: {
-                size: 3,
-                line: {
-                    color: 'rgba(217, 217, 217, 0.14)',
-                    width: 0.25
+        var data = [];
+        for(var i = 0; i < parsedData.length; i++)
+        {
+            var trace = {
+                x: parsedData[i].x,
+                y: parsedData[i].y,
+                z: parsedData[i].z,
+                mode: 'markers',
+                marker: {
+                    size: 3,
+                    colors: parsedData[i].c,
+                    line: {
+                        color: '#ffffff',
+                        width: 0.25
+                    },
                 },
-            },
 
-            type: 'scatter3d'
-        };
-        var data = [trace];
+                type: 'scatter3d'
+            };
+            data.push(trace);
+        }
+
         var layout = {
             scene: {
                 xaxis: {
@@ -488,80 +497,13 @@ $.ajax({
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
         };
-        Plotly.newPlot('piechart', data, layout, {displayModeBar: false});
+        Plotly.newPlot(element, data, layout, {displayModeBar: false});
     }
-})
+});
+}
 
 
 $("#expandChart").click(function () {
     $("#expandedChartView").toggle();
-    $.ajax({
-        url: '/get_scatter_plot_data',
-        success: function (data) {
-            var parsedData = JSON.parse(data)
-            var trace = {
-                x: parsedData.x,
-                y: parsedData.y,
-                z: parsedData.z,
-                mode: 'markers',
-                marker: {
-                    size: 3,
-                    line: {
-                        color: 'rgba(217, 217, 217, 0.14)',
-                        width: 0.25
-                    },
-                },
-
-                type: 'scatter3d'
-            };
-            var data = [trace];
-            var layout = {
-                scene: {
-                    xaxis: {
-                        title: 'Weight',
-                        titlefont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                        tickfont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                    },
-                    yaxis: {
-                        title: 'Height',
-                        titlefont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                        tickfont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                    },
-                    zaxis: {
-                        title: 'Age',
-                        titlefont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                        tickfont: {
-                            size: 10,
-                            color: '#ffffff'
-                        },
-                    },
-                },
-
-                margin: {
-                    l: 0,
-                    r: 0,
-                    b: 0,
-                    t: 0
-                },
-                paper_bgcolor: 'rgba(0,0,0,0)',
-                plot_bgcolor: 'rgba(0,0,0,0)',
-            };
-            Plotly.newPlot('expandedPieChart', data, layout, {displayModeBar: false});
-        }
-    })
+    load_scatter_plot('expandedScatterPlot');
 })

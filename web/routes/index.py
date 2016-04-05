@@ -34,20 +34,27 @@ def search_suggestions():
 
 @index_api.route('/get_scatter_plot_data')
 def get_scatter_plot_data():
+    colors = ['#FBB735','#E98931','#EB403B','#B32E37','#6C2A6A','#5C4399','#274389','#1FSEA8','#227FBO','#2ABOC5','3#9COB3']
+    traces = []
+    for i in range(0,11):
+        traces.append({
+            'x': [],
+            'y': [],
+            'z': [],
+            'c': colors[i]
+        })
     get_runners = cassandra_helper.session.prepare('''
-    SELECT weight, height, birth_year, birth_month, birth_day FROM runr.runners
+    SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners
     ''')
     runners = cassandra_helper.session.execute(get_runners)
-    results = {'x':[],
-               'y':[],
-               'z':[]}
     today = date.today()
 
     for runner in runners:
-        results['x'].append(runner["weight"])
-        results['y'].append(runner["height"])
-        results['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"])))
-    return json.dumps(results)
+        traces[int(runner['cluster'])]['x'].append(runner['weight'])
+        traces[int(runner['cluster'])]['y'].append(runner['height'])
+        traces[int(runner['cluster'])]['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"]))),
+
+    return json.dumps(traces)
 
 @index_api.route('/get_cluster_runners')
 def get_cluster_runners():

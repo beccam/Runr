@@ -13,6 +13,7 @@ import concurrent._
 import scala.collection.mutable.ListBuffer
 import scala.util._
 import scala.math
+import org.apache.spark.broadcast._
 
 object position_calculator {
   def main(args: Array[String]) {
@@ -27,52 +28,66 @@ object position_calculator {
     val sc = new SparkContext(conf)
     val cassandraContext = CassandraConnector(conf)
     var i = 0
+
+
+
     val gps_locations = sc.cassandraTable("runr", "points_by_distance").collect().sortBy(_.getInt("location_id"))
+    val gps_broadcast = sc.broadcast(gps_locations)
+
+    val runner_positions = sc.cassandraTable("runr", "runner_tracking").cache()
+
+
+
+    val counters = sc.cassandraTable("runr", "time_elapsed").collect()
+    var tick = 0
+    if(counters.length > 0)
+    {
+      tick = counters(0).getInt("time_elapsed")
+    }
     while(true) {
       val start = System.nanoTime
 
-      val counters = sc.cassandraTable("runr", "time_elapsed").collect()
 
-      cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + 1 WHERE counter_name='time_elapsed'"))
-      var tick = 0
-      if(counters.length > 0)
-      {
-        tick = counters(0).getInt("time_elapsed")
-      }
-      val runner_positions = sc.cassandraTable("runr", "runner_tracking")
+
       var updated_positions : RDD[CassandraRow] = null
       if(tick > 1199) {
-        updated_positions = runner_positions.map(x => reset_runners(x, gps_locations))
         cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + " + (tick * -1) + " WHERE counter_name='time_elapsed'"))
+        updated_positions = runner_positions.map(x => reset_runners(x, gps_broadcast))
       }
       else
-        updated_positions = runner_positions.map(x => update_position(x, gps_locations,tick))
-
-      updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"))
-      var sorted_runners = updated_positions.sortBy(_.getDouble("distance_ratio")).collect()
-
-      val predictions = new ListBuffer[(Int, String)]
-      var j = 0
-      for(j <- 0 to sorted_runners.length - 1)
       {
-        var row = (j, sorted_runners(j).getString("id"))
-        predictions += row
+        cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + 1 WHERE counter_name='time_elapsed'"))
+        updated_positions = runner_positions.map(x => update_position(x, gps_broadcast, tick))
       }
-      sc.parallelize(predictions).saveToCassandra("runr", "projected_finish", SomeColumns("finish_place", "id"))
+      updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"))
+      updated_positions
+        .sortBy(_.getDouble("distance_ratio"))
+        .zipWithIndex()
+        .map(x => new CassandraRow(Array("finish_place", "id"), Array(x._2.toString(), x._1.getString("id"))))
+        .saveToCassandra("runr", "projected_finish", SomeColumns("finish_place","id"))
 
-      val duration = (System.nanoTime - start) / 1e6
-
-      if(duration < 1000) {
-        Thread.sleep((1000 - duration).toLong)
-      }
-      i = i + 1;
+//      val predictions = new ListBuffer[(Int, String)]
+//      var j = 0
+//      for(j <- 0 to sorted_runners.length - 1)
+//      {
+//        var row = (j, sorted_runners(j).getString("id"))
+//        predictions += row
+//      }
+//      sc.parallelize(predictions).saveToCassandra("runr", "projected_finish", SomeColumns("finish_place", "id"))
+//
+        val duration = (System.nanoTime - start) / 1e6
+        println(duration);
+//      if(duration < 1000) {
+//        Thread.sleep((1000 - duration).toLong)
+//      }
+      tick = tick + 1;
     }
   }
-  def update_position(x: CassandraRow, gps_locations: Array[CassandraRow], tick: Int) : CassandraRow =
+  def update_position(x: CassandraRow, gps_locations: Broadcast[Array[CassandraRow]], tick: Int) : CassandraRow =
   {
     val position_adjustment = (x.getInt("speed") * (.8 + Random.nextDouble() * (1.2 - .8))) * 1.5;
-    if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.length) {
-        var location = gps_locations((x.getInt("distance_actual") + position_adjustment).toInt)
+    if (tick >= x.getInt("starting_position") && (x.getInt("distance_actual") + position_adjustment).toInt < gps_locations.value.length) {
+        var location = gps_locations.value((x.getInt("distance_actual") + position_adjustment).toInt)
         var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed", "distance_ratio"),
           Array(x.getString("id"),
             new Date(),
@@ -99,14 +114,14 @@ object position_calculator {
       return updated_position;
     }
   }
-  def reset_runners(x: CassandraRow, gps_locations: Array[CassandraRow]) : CassandraRow = {
+  def reset_runners(x: CassandraRow, gps_locations: Broadcast[Array[CassandraRow]]) : CassandraRow = {
     var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"),
       Array(x.getString("id"),
         new Date(),
         x.getDecimal("speed").toString(),
         "0",
         "0",
-        gps_locations(0).getString("latitude_degrees") + "," + gps_locations(0).getString("longitude_degrees"),
+        gps_locations.value(0).getString("latitude_degrees") + "," + gps_locations.value(0).getString("longitude_degrees"),
         x.getDecimal("speed").toString()))
     return updated_position;
   }

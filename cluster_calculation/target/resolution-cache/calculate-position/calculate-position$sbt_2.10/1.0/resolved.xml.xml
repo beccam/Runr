@@ -4,7 +4,7 @@
 		module="calculate-position$sbt_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160310102213"
+		publication="20160405094843"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>
