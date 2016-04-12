@@ -161,8 +161,8 @@ function updateClusterMarkers() {
                     {
                         markers[clusterId].marker.labelContent = box.count.toString();
                         markers[clusterId].marker.label.draw()
-                        markers[clusterId].marker.data("lat", box.latitude)
-                        markers[clusterId].marker.data("lng", box.longitude)
+                        $(markers[clusterId].marker).data("lat", box.latitude)
+                        $(markers[clusterId].marker).data("lng", box.longitude)
                     }
                     else
                     {

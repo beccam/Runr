@@ -4,7 +4,7 @@ output mode:
 0 -> single
 output directories:
 1 items
-output dir -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes
+output dir -> /home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes
 compile options:
 0 items
 javac options:
@@ -19,20 +19,19 @@ name hashing:
 1 items
 0 -> true
 products:
-6 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$1.class
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$2.class
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$3.class
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$4.class
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$.class
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator.class
+3 items
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation$$anonfun$main$1.class
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation$.class
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation.class
 binary dependencies:
-5 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/.ivy2/cache/com.datastax.cassandra/cassandra-driver-core/bundles/cassandra-driver-core-2.1.7.1.jar
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.4.1.jar
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.4.1.jar
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+7 items
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.6.0-M1.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/org.apache.spark/spark-catalyst_2.10/jars/spark-catalyst_2.10-1.6.0.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.6.0.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/org.apache.spark/spark-mllib_2.10/jars/spark-mllib_2.10-1.6.0.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/org.apache.spark/spark-sql_2.10/jars/spark-sql_2.10-1.6.0.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
 direct source dependencies:
 0 items
 direct external dependencies:
@@ -50,185 +49,122 @@ inheritance internal dependencies:
 inheritance external dependencies:
 0 items
 class names:
-6 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator$
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator$$anonfun$main$1
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator$$anonfun$main$2
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator$$anonfun$main$3
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator$$anonfun$main$4
+3 items
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cluster_calculation
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cluster_calculation$
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cluster_calculation$$anonfun$main$1
 used names:
-132 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> &&
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> *
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> +
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> -
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> /
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> <
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> <init>
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> >
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> >=
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> AnyRef
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Array
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> CassandraConnector
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> CassandraRow
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> CassandraTableScanRDD
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> ClassTag
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Date
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> GenericRowReader$
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Int
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Predef
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> RDD
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Random
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> RowReaderFactory
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> RowWriterFactory
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> SomeColumns
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> SparkConf
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> SparkContext
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> String
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> System
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Thread
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> Unit
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> ValidRDDType
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> apache
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> apply
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> cassandraContext
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> cassandraTable
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> collect
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> com
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> concurrent
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> conf
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> connector
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> counters
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> cql
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> datastax
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> duration
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> execute
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> genericRowWriterFactory
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> getDecimal
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> getDouble
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> getInt
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> getString
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> gps_locations
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> i
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> java
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> javaSerializableAsValidRDDType
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> lang
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> length
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> location
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> map
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> materializeClassTag
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> math
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> nanoTime
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> nextDouble
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> org
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> package
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_adjustment
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> position_calculator
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> qual$1
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> qual$2
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> qual$3
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> qual$4
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> rdd
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> reader
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> reset_runners
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> runner_positions
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> saveToCassandra
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> sc
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> scala
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> session
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> set
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> setAppName
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> setMaster
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> sleep
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> spark
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> start
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> streaming
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> tick
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toInt
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toLong
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toNamedColumnRef
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toRDDFunctions
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toSparkContextFunctions
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> toString
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> update_position
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> updated_position
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> updated_positions
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> util
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> while$1
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> withSessionDo
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> wrapRefArray
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> writer
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$1
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$10
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$11
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$12
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$13
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$14
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$15
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$16
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$17
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$18
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$19
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$2
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$20
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$21
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$22
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$23
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$24
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$25
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$26
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$27
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$28
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$29
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$3
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$30
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$31
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$4
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$5
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$6
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$7
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$8
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> x$9
+70 items
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> ->
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> <init>
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> AnyRef
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Array
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> CassandraConnector
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> CassandraSQLContext
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> ClassTag
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Date
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> KMeans
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Map
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Predef
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> RDD
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> SaveMode
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> SparkConf
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> SparkContext
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> String
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Unit
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> VectorAssembler
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> Vectors
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> any2ArrowAssoc
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> apache
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> apply
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> assembler
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cassandra
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cluster_calculation
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> clustering
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> collect
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> com
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> conf
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> connector
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> cql
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> csc
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> dataset
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> datastax
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> feature
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> fit
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> foreach
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> format
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> java
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> kmeans
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> linalg
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> materializeClassTag
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> ml
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> mllib
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> mode
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> model
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> options
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> org
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> package
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> predictions
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> println
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> rdd
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> results
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> save
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> sc
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> scala
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> select
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> set
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setAppName
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setFeaturesCol
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setInputCols
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setK
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setMaster
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setOutputCol
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> setPredictionCol
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> spark
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> sql
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> transform
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> util
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> write
 product stamps:
-6 items
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$1.class -> lastModified(1455816266000)
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$2.class -> lastModified(1455816266000)
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$3.class -> lastModified(1455816266000)
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$$anonfun$main$4.class -> lastModified(1455816266000)
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator$.class -> lastModified(1455816265000)
-/home/peyton/Documents/Runr/calculate-position/target/scala-2.10/classes/position_calculator.class -> lastModified(1455816265000)
+3 items
+/home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation$$anonfun$main$1.class -> lastModified(1460473756000)
+/home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation$.class -> lastModified(1460473756000)
+/home/peyton/Documents/Runr/cluster_calculation/target/scala-2.10/classes/cluster_calculation.class -> lastModified(1460473756000)
 source stamps:
 1 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> hash(07d8ca4e28112333fd011b043d5b3a1c782fa217)
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> hash(78c37c2ce6ea5e25d5fb65dd6e26fe51f26da8f7)
 binary stamps:
-5 items
-/home/peyton/.ivy2/cache/com.datastax.cassandra/cassandra-driver-core/bundles/cassandra-driver-core-2.1.7.1.jar -> lastModified(1437154495000)
-/home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.4.1.jar -> lastModified(1448967121000)
-/home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.4.1.jar -> lastModified(1436399609000)
-/home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar -> lastModified(1425002069000)
-/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> lastModified(1453869048000)
+7 items
+/home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.6.0-M1.jar -> lastModified(1456157796000)
+/home/peyton/.ivy2/cache/org.apache.spark/spark-catalyst_2.10/jars/spark-catalyst_2.10-1.6.0.jar -> lastModified(1451472471000)
+/home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.6.0.jar -> lastModified(1451473058000)
+/home/peyton/.ivy2/cache/org.apache.spark/spark-mllib_2.10/jars/spark-mllib_2.10-1.6.0.jar -> lastModified(1451476846000)
+/home/peyton/.ivy2/cache/org.apache.spark/spark-sql_2.10/jars/spark-sql_2.10-1.6.0.jar -> lastModified(1451472468000)
+/home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar -> lastModified(1425002040000)
+/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar -> lastModified(1459981084000)
 class names:
-5 items
-/home/peyton/.ivy2/cache/com.datastax.cassandra/cassandra-driver-core/bundles/cassandra-driver-core-2.1.7.1.jar -> com.datastax.driver.core.ResultSet
-/home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.4.1.jar -> com.datastax.spark.connector.SomeColumns
-/home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.4.1.jar -> org.apache.spark.SparkContext$
-/home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar -> scala.Double
-/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> java.lang.Object
+7 items
+/home/peyton/.ivy2/cache/com.datastax.spark/spark-cassandra-connector_2.10/jars/spark-cassandra-connector_2.10-1.6.0-M1.jar -> com.datastax.spark.connector.cql.CassandraConnector$
+/home/peyton/.ivy2/cache/org.apache.spark/spark-catalyst_2.10/jars/spark-catalyst_2.10-1.6.0.jar -> org.apache.spark.sql.Row
+/home/peyton/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.6.0.jar -> org.apache.spark.SparkContext$
+/home/peyton/.ivy2/cache/org.apache.spark/spark-mllib_2.10/jars/spark-mllib_2.10-1.6.0.jar -> org.apache.spark.ml.feature.VectorAssembler$
+/home/peyton/.ivy2/cache/org.apache.spark/spark-sql_2.10/jars/spark-sql_2.10-1.6.0.jar -> org.apache.spark.sql.DataFrame
+/home/peyton/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.5.jar -> scala.collection.generic.GenMapFactory
+/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar -> java.lang.Object
 internal apis:
 1 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHApz7twAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAF3NyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cB6sjWR0AAZub3RpZnlzcQB+AAzgFIw6dAAEd2FpdHNxAH4ADArswbd0AA0kYXNJbnN0YW5jZU9mc3EAfgAMP7EcD3QABmVxdWFsc3NxAH4ADDLpda10AAxhc0luc3RhbmNlT2ZzcQB+AAye0l1WdAAMc3luY2hyb25pemVkc3EAfgAMvqLBbnQADSRpc0luc3RhbmNlT2ZzcQB+AAyUJgukdAAPdXBkYXRlX3Bvc2l0aW9uc3EAfgAM6SZwHnQABG1haW5zcQB+AAw+if26dAAJbm90aWZ5QWxsc3EAfgAMP5+l63QADGlzSW5zdGFuY2VPZnNxAH4ADMEKokZ0AAI9PXNxAH4ADCGQUyB0AAVjbG9uZXNxAH4ADGN10MJ0AA1yZXNldF9ydW5uZXJzc3EAfgAMNaHh6XQACHRvU3RyaW5nc3EAfgAMaZ5banQAE3Bvc2l0aW9uX2NhbGN1bGF0b3JzcQB+AAxtDKzJdAACIT1zcQB+AAyNtFnkdAAIZ2V0Q2xhc3NzcQB+AAxfDmnLdAACbmVzcQB+AAxq9k6HdAACZXFzcQB+AAw72q+qdAACIyNzcQB+AAxwTQDPdAAIZmluYWxpemVzcQB+AAyv+dRhdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBFeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAcQB+AC11cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AFwBc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AEVMAAlpbmhlcml0ZWRxAH4ARUwAB3BhcmVudHNxAH4ARXhxAH4AY3NxAH4AXAF1cQB+AEAAAAABc3IADXhzYnRpLmFwaS5EZWZSvp/ifLQ2aQIAAkwACnJldHVyblR5cGV0ABBMeHNidGkvYXBpL1R5cGU7WwAPdmFsdWVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvUGFyYW1ldGVyTGlzdDt4cQB+AEZxAH4AT3VxAH4AUAAAAABzcQB+AFIAcQB+AB91cQB+AFQAAAAAc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AYnQABFVuaXRzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGJzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AH51cgAaW0x4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdDv10zod8rNw7gIAAHhwAAAAAXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdNbFvBxkSXTjAgACWgAKaXNJbXBsaWNpdFsACnBhcmFtZXRlcnN0ABxbTHhzYnRpL2FwaS9NZXRob2RQYXJhbWV0ZXI7eHAAdXIAHFtMeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlcjvPuMVdpd21bQIAAHhwAAAAAXNyABl4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyH0WuF9NJsOoCAARaAApoYXNEZWZhdWx0TAAIbW9kaWZpZXJ0AB1MeHNidGkvYXBpL1BhcmFtZXRlck1vZGlmaWVyO0wABG5hbWVxAH4ADUwAA3RwZXEAfgBreHAAfnIAG3hzYnRpLmFwaS5QYXJhbWV0ZXJNb2RpZmllcgAAAAAAAAAAEgAAeHEAfgBXdAAFUGxhaW50AARhcmdzc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgByWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgBic3EAfgBxdAAFQXJyYXlxAH4Ad3VyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgBxdAAGU3RyaW5nc3EAfgB1c3EAfgB4dXEAfgB7AAAAA3NxAH4AfXQABGphdmFzcQB+AH10AARsYW5ncQB+AIJwc3EAfgBcAXVxAH4AQAAAAABwc3EAfgBcAXVxAH4AlgAAAAJzcQB+AHF0AAZPYmplY3RxAH4AmnNxAH4AcXQAA0FueXEAfgB3cHB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAHNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUvVpPEZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdABIL2hvbWUvcGV5dG9uL0RvY3VtZW50cy9SdW5yL2NhbGN1bGF0ZS1wb3NpdGlvbi90YXJnZXQvc2NhbGEtMi4xMC9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUB9jKTigRIzP9ARsEPVs6HHgvohc=
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHC0Qkd6AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAFXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cFJ53/F0AAZub3RpZnlzcQB+AAygorFOdAATY2x1c3Rlcl9jYWxjdWxhdGlvbnNxAH4ADFuaX2N0AAR3YWl0c3EAfgAMWpt88XQADSRhc0luc3RhbmNlT2ZzcQB+AAx6QPqrdAAGZXF1YWxzc3EAfgAMn04oAnQADGFzSW5zdGFuY2VPZnNxAH4ADGfgymx0AAxzeW5jaHJvbml6ZWRzcQB+AAwUkhSVdAANJGlzSW5zdGFuY2VPZnNxAH4ADMh59gZ0AARtYWluc3EAfgAM467yiHQACW5vdGlmeUFsbHNxAH4ADHAUjvp0AAxpc0luc3RhbmNlT2ZzcQB+AAzH9vp1dAACPT1zcQB+AAwKAwZ3dAAFY2xvbmVzcQB+AAyiDhTpdAAIdG9TdHJpbmdzcQB+AAzXxLp5dAACIT1zcQB+AAzWfIlDdAAIZ2V0Q2xhc3NzcQB+AAxwfCAOdAACbmVzcQB+AAwPd3OLdAACZXFzcQB+AAwpZkvLdAACIyNzcQB+AAxiH5r7dAAIZmluYWxpemVzcQB+AAyOa1JMdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBBeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAcQB+ABF1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgBZeHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBYAHBzcQB+AF1zcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AQUwACWluaGVyaXRlZHEAfgBBTAAHcGFyZW50c3EAfgBBeHEAfgBhc3EAfgBYAHBzcQB+AF11cQB+ADwAAAABc3IADXhzYnRpLmFwaS5EZWZSvp/ifLQ2aQIAAkwACnJldHVyblR5cGV0ABBMeHNidGkvYXBpL1R5cGU7WwAPdmFsdWVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvUGFyYW1ldGVyTGlzdDt4cQB+AEJxAH4AS3VxAH4ATAAAAABzcQB+AE4AcQB+AB91cQB+AFAAAAAAc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AYHQABFVuaXRzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGBzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AH51cgAaW0x4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdDv10zod8rNw7gIAAHhwAAAAAXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdNbFvBxkSXTjAgACWgAKaXNJbXBsaWNpdFsACnBhcmFtZXRlcnN0ABxbTHhzYnRpL2FwaS9NZXRob2RQYXJhbWV0ZXI7eHAAdXIAHFtMeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlcjvPuMVdpd21bQIAAHhwAAAAAXNyABl4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyH0WuF9NJsOoCAARaAApoYXNEZWZhdWx0TAAIbW9kaWZpZXJ0AB1MeHNidGkvYXBpL1BhcmFtZXRlck1vZGlmaWVyO0wABG5hbWVxAH4ADUwAA3RwZXEAfgBreHAAfnIAG3hzYnRpLmFwaS5QYXJhbWV0ZXJNb2RpZmllcgAAAAAAAAAAEgAAeHEAfgBTdAAFUGxhaW50AARhcmdzc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgByWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgBgc3EAfgBxdAAFQXJyYXlxAH4Ad3VyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgBxdAAGU3RyaW5nc3EAfgB1c3EAfgB4dXEAfgB7AAAAA3NxAH4AfXQABGphdmFzcQB+AH10AARsYW5ncQB+AIJzcQB+AFgAcHNxAH4AXXVxAH4APAAAAABzcQB+AFgAcHNxAH4AXXVxAH4AlgAAAAJzcQB+AHF0AAZPYmplY3RxAH4AmnNxAH4AcXQAA0FueXEAfgB3dXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAABzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVQLBLlMdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQASS9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jbHVzdGVyX2NhbGN1bGF0aW9uL3RhcmdldC9zY2FsYS0yLjEwL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABR4w3ws5upeJdX7Zd1uJv5R8m2o9w==
 external apis:
 0 items
 source infos:
 1 items
-/home/peyton/Documents/Runr/calculate-position/src/main/java/calculate_position.scala -> 
+/home/peyton/Documents/Runr/cluster_calculation/src/main/java/cluster_calculation.scala -> 
 AAAAAAAAAAA=
 compilations:
-4 items
+5 items
 0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUsed6RF1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASC9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jYWxjdWxhdGUtcG9zaXRpb24vdGFyZ2V0L3NjYWxhLTIuMTAvY2xhc3Nlc3QAAS8=
 1 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUsepped1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASC9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jYWxjdWxhdGUtcG9zaXRpb24vdGFyZ2V0L3NjYWxhLTIuMTAvY2xhc3Nlc3QAAS8=
 2 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUs60wLJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASC9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jYWxjdWxhdGUtcG9zaXRpb24vdGFyZ2V0L3NjYWxhLTIuMTAvY2xhc3Nlc3QAAS8=
 3 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUvVpPEZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASC9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jYWxjdWxhdGUtcG9zaXRpb24vdGFyZ2V0L3NjYWxhLTIuMTAvY2xhc3Nlc3QAAS8=
+4 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVAsEuUx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASS9ob21lL3BleXRvbi9Eb2N1bWVudHMvUnVuci9jbHVzdGVyX2NhbGN1bGF0aW9uL3RhcmdldC9zY2FsYS0yLjEwL2NsYXNzZXN0AAEv

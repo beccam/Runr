@@ -1,5 +1,7 @@
 .pyc
 /.idea
+/cluster_calculation/target
+/cluster_calculation/.idea
 /calculate-position/target
 /calculate-position/.idea
 /data-loader/.idea

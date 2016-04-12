@@ -34,7 +34,7 @@ def search_suggestions():
 
 @index_api.route('/get_scatter_plot_data')
 def get_scatter_plot_data():
-    colors = ['#FBB735','#E98931','#EB403B','#B32E37','#6C2A6A','#5C4399','#274389','#1FSEA8','#227FBO','#2ABOC5','3#9COB3']
+    colors = ['#FBB735','#E98931','#EB403B','#B32E37','#6C2A6A','#5C4399','#274389','#1FSEA8','#227FBO','#2ABOC5','#39COB3']
     traces = []
     for i in range(0,11):
         traces.append({
@@ -50,9 +50,10 @@ def get_scatter_plot_data():
     today = date.today()
 
     for runner in runners:
-        traces[int(runner['cluster'])]['x'].append(runner['weight'])
-        traces[int(runner['cluster'])]['y'].append(runner['height'])
-        traces[int(runner['cluster'])]['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"]))),
+        if runner['weight'] is not None and runner['height'] is not None and runner['birth_year'] is not None:
+            traces[int(runner['cluster'])]['x'].append(runner['weight'])
+            traces[int(runner['cluster'])]['y'].append(runner['height'])
+            traces[int(runner['cluster'])]['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"]))),
 
     return json.dumps(traces)
 

@@ -4,7 +4,7 @@
 		module="calculate-position_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160314155643"
+		publication="20160412112830"
 	>
 		<description>
 		calculate-position
@@ -34,8 +34,8 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.5" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.6.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.6.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-mllib_2.10" rev="1.6.0" conf="provided->default(compile)"/>
 		<dependency org="com.datastax.spark" name="spark-cassandra-connector_2.10" rev="1.6.0-M1" conf="compile->default(compile)"/>
-		<dependency org="org.apache.spark" name="spark-mllib_2.10" rev="1.6.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
