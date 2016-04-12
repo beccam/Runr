@@ -12,4 +12,4 @@ Here the user can see basic information about the runner they have selected, bei
 The DSE Analytics Spark job for the simulation can be found [here](https://github.com/datastax-demos/Runr/blob/master/calculate-position/src/main/java/calculate_position.scala). 
 
 ## Clustering Tooltip - DSE Search
-Runners are tracked along the race course by these circular "Runner Clusters." The number inside the cluster designates how many runners are in that section of the race. As the map zooms in/out the number of clusters changes, as does the count of runners in each one. This number of runners is powered by a DSE Search geospatial query, as seen in (https://github.com/datastax-demos/Runr/blob/master/web/routes/index.py) at line 233.
+Runners are tracked along the race course by these circular "Runner Clusters." The number inside the cluster designates how many runners are in that section of the race. As the map zooms in/out the number of clusters changes, as does the count of runners in each one. This number of runners is powered by a DSE Search geospatial query, as seen in [here](https://github.com/datastax-demos/Runr/blob/master/web/routes/index.py) at line 233.
