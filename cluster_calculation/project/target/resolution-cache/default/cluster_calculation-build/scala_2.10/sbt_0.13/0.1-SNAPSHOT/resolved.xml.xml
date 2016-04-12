@@ -4,7 +4,7 @@
 		module="cluster_calculation-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160412112816"
+		publication="20160412114321"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
