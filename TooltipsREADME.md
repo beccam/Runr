@@ -8,7 +8,8 @@ The clock represents the race time from when the simulation began. On the backen
 Being able to search data is a key component of a cloud application. DSE Search enables users to search for runners using type ahead functionality. 
 
 ## Runner Data Tooltip - DSE Core and DSE Analytics
-Here the user can see basic information about the runner they have selected, being powered by standard transactional queries of DSE Core (Cassandra). An example is `SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners`.  
+Here the user can see basic information about the runner they have selected, being powered by standard transactional queries of DSE Core (Cassandra). An example is:  
+`SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners`   
 The DSE Analytics Spark job for the simulation can be found [here](https://github.com/datastax-demos/Runr/blob/master/calculate-position/src/main/java/calculate_position.scala). 
 
 ## Clustering Tooltip - DSE Search
