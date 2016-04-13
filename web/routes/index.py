@@ -124,6 +124,7 @@ def search_for_runner():
             'age': today.year - runner.current_rows[0]["birth_year"] - ((today.month, today.day) < (runner.current_rows[0]["birth_month"], runner.current_rows[0]["birth_day"])),
             'average_speed': runner_position[0]["average_speed"],
             'projected_finish': runner_projected_finish[0]["finish_place"],
+            'projected_finish_time': runner_projected_finish[0]["finish_time"],
             'lat_lng': runner_position[0]['lat_lng']
         })
     else:
@@ -134,6 +135,7 @@ def search_for_runner():
             'weight':'',
             'average_speed':'',
             'projected_finish':'',
+            'projected_finish_time':'',
             'lat_lng':'',
         })
 

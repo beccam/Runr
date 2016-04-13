@@ -1,8 +1,13 @@
 .pyc
 /.idea
-/cluster_calculation/target
-/cluster_calculation/.idea
+/calculate_kmeans_cluster/target
+/calculate_kmeans_cluster/.idea
+/calculate_kmeans_cluster/project
+/calculate_projected_finish/project
+/calculate_projected_finish/target
 /calculate-position/target
+/calculate-position/project
 /calculate-position/.idea
+/calculate-position/classes
 /data-loader/.idea
 /web/.idea

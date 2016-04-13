@@ -380,10 +380,11 @@ $(document).ready(function () {
                 if (runner_object.weight != '') {
                     $("#runner_weight").text("Weight:" + runner_object.weight);
                     $("#runner_name").text(runner_object.given_name);
-                    $("#runner_average_speed").text("Average Speed:" + runner_object.average_speed + " Km/hr");
+                    $("#runner_average_speed").text("Average Speed:" + parseFloat(runner_object.average_speed).toFixed(2) + " Km/hr");
                     $("#runner_age").text("Age:" + runner_object.age)
                     $("#runner_id").data("id", runner_object.id)
                     $("#runner_projected_finish").text("Projected Finish:" + runner_object.projected_finish)
+                    $("#runner_projected_finish_time").text("Projected Time to Finish:" + pad(Math.floor(parseFloat(runner_object.projected_finish_time) / 3600), 2) + ":" + pad(Math.floor((parseFloat(runner_object.projected_finish_time) % 3600) / 60), 2) + ":" + pad(Math.floor(parseFloat(runner_object.projected_finish_time) % 60), 2))
 
                     var latlng = runner_object.lat_lng.split(',')
                     var runnerTrack = {lat: parseFloat(latlng[0]), lng: parseFloat(latlng[1])};

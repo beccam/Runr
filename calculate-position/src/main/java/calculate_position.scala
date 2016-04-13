@@ -1,21 +1,13 @@
-
-import com.datastax.spark.connector.rdd.CassandraTableScanRDD
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import com.datastax.spark.connector._
 import com.datastax.spark.connector.cql._
 import java.util.Date
 import org.apache.spark.rdd.RDD
-import org.apache.spark.streaming._
-import com.datastax.spark.connector.streaming._
-import concurrent._
-import scala.collection.mutable.ListBuffer
 import scala.util._
-import scala.math
 import org.apache.spark.broadcast._
 
-object position_calculator {
+object calculate_position {
   def main(args: Array[String]) {
 
     val conf = new SparkConf()
@@ -39,30 +31,14 @@ object position_calculator {
     val gps_locations = sc.cassandraTable("runr", "points_by_distance").collect().sortBy(_.getInt("location_id"))
     val gps_broadcast = sc.broadcast(gps_locations)
 
-//    val runner_positions = sc.cassandraTable("runr", "runner_tracking")
-//
     var updated_positions : RDD[CassandraRow] = null
-//    if(tick > 1199) {
-//      cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + " + (tick * -1) + " WHERE counter_name='time_elapsed'"))
-//      updated_positions = runner_positions.map(x => reset_runners(x, gps_broadcast))
-//      tick = 0
-//    }
-//    else
-//    {
-//      cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + 1 WHERE counter_name='time_elapsed'"))
-//      updated_positions = runner_positions.map(x => update_position(x, gps_broadcast, tick))
-//    }
-//    updated_positions.cache()
-//
-//    var prev_positions : RDD[CassandraRow] = null
-
     while(true) {
       val start = System.nanoTime
       val runner_positions = sc.cassandraTable("runr", "runner_tracking")
-
       if(tick > 7199 || tick < 0) {
         cassandraContext.withSessionDo(session => session.execute("UPDATE runr.time_elapsed SET time_elapsed = time_elapsed + " + (tick * -1) + " WHERE counter_name='time_elapsed'"))
         updated_positions = runner_positions.map(x => reset_runners(x, gps_broadcast))
+        tick = 0
       }
       else
       {
@@ -72,11 +48,6 @@ object position_calculator {
 
 
       updated_positions.saveToCassandra("runr", "runner_tracking", SomeColumns("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed"))
-//      updated_positions
-//        .sortBy(_.getDouble("distance_ratio"))
-//        .zipWithIndex()
-//        .map(x => new CassandraRow(Array("finish_place", "id"), Array(x._2.toString(), x._1.getString("id"))))
-//        .saveToCassandra("runr", "projected_finish", SomeColumns("finish_place","id"))
 
       val duration = (System.nanoTime - start) / 1e6
       if(duration < 1000) {
@@ -89,6 +60,7 @@ object position_calculator {
   def update_position(x: CassandraRow, gps_locations: Broadcast[Array[CassandraRow]], tick: Int) : CassandraRow =
   {
     val position_adjustment = (x.getDouble("speed").toInt * (.8 + Random.nextDouble() * (1.2 - .8)));
+    val temp = gps_locations.value.length
     if (tick >= x.getInt("starting_position") && (x.getDouble("distance_actual").toInt + position_adjustment).toInt < gps_locations.value.length) {
         var location = gps_locations.value((x.getDouble("distance_actual").toInt + position_adjustment).toInt)
         var updated_position = new CassandraRow(Array("id", "date", "speed", "distance", "distance_actual", "lat_lng", "average_speed", "distance_ratio", "starting_position"),
