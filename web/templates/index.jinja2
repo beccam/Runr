@@ -102,8 +102,8 @@
                         src="static/img/Runr_logo.png"
                         data-toggle="popover"
                         data-placement="bottom"
-                        title="Runr is a sample cloud application built for tracking runners in a marathon. <br/><br/>Different parts of this app will show how a cloud application can leverage DataStax Enterprise as the data management layer of choice."
-                        data-content=""/>
+                        title="Runr is a sample cloud application built to simulate the tracking of marathon runners in near real time. <br/><br/>Different parts of this app will show how a cloud application can leverage DataStax Enterprise as the data management layer of choice."
+                        data-content="<a style='color:white' href='https://github.com/datastax-demos/Runr/'>Check this out on GitHub!</a>"/>
                 </div>
                 <div class="col-md-2 col-xs-2 col-xs-offset-3 col-md-offset-4 " style="padding:3px"/>
                     <div>
@@ -111,7 +111,7 @@
                            data-toggle="popover"
                            data-placement="bottom"
                            title="The clock represents the time of the race since the simulation began. <br/><br/>The race simulation is powered by a recurring DSE Analytics job that simulates just over 10,000 runners moving along the race course. <br/><br/>Every second the runners location is updated based on an algorithm that determines their pace."
-                           data-content="<div><a style='color:white' href='https://github.com/datastax-demos/Runr/blob/master/calculate-position/src/main/java/calculate_position.scala'>Check this out on GitHub!</a></div>" ></b>
+                           data-content="<a style='color:white' href='https://github.com/datastax-demos/Runr/blob/master/calculate-position/src/main/java/calculate_position.scala'>Check this out on GitHub!</a>" ></b>
                     </div>
                 </div>
                 <div class=" col-md-2">
@@ -121,7 +121,8 @@
                 <div class="col-md-2 col-xs-4 col-xs-offset-1 info-popover" style="padding:1px"
                        data-toggle="popover"
                        data-placement="bottom"
-                       title="Being able to search data is a key component of a cloud application. DSE Search enables users to search for runners using type ahead functionality.">
+                       title="Being able to search data is a key component of a cloud application. <br/><br/>DSE Search enables users to search for runners using type ahead functionality."
+                        data-content="<a style='color:white' href='https://github.com/datastax-demos/Runr/blob/master/web/routes/index.py#L125'>Check this out on GitHub!</a>" >
                     <select id="runnerSearch" style="width:100%; ">
 
                     </select>
@@ -139,7 +140,8 @@
                     <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 info-popover"
                            data-toggle="popover"
                            data-placement="bottom"
-                           title="Here the user can see basic information about the runner they have selected, being powered by standard transactional queries of DSE Core (Cassandra). An example is: SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners">
+                           title="Here the user can see basic information about the runner they have selected, being powered by standard transactional queries of DSE Core (Cassandra). <br/><br/>An example query would be: <i>SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners</i>"
+                           data-content="<a style='color:white' href='https://github.com/datastax-demos/Runr/blob/master/web/routes/index.py#L125'>Check this out on GitHub!</a>" >>
                         <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
                         <div style="float:left; padding:10px; padding-bottom:0px">
                             <div id="runner_id"></div>
