@@ -32,6 +32,38 @@ def index():
 def search_suggestions():
     return ""
 
+@index_api.route('/get_bar_graph_data')
+def get_bar_graph_data():
+    chart_data = {
+        'x': [18, 30, 45, 55, 70, 90],
+        'y':[0, 0, 0, 0, 0, 0],
+    }
+    get_runners = cassandra_helper.session.prepare('''
+        SELECT id, age FROM runr.runners
+        ''')
+    get_runner_tracking = cassandra_helper.session.prepare('''
+        SELECT id, average_speed FROM runr.runner_tracking
+        ''')
+    runners = cassandra_helper.session.execute(get_runners)
+    runner_tracking = cassandra_helper.session.execute(get_runner_tracking)
+    for i in range(0, len(runners.current_rows)):
+        runner_age = int(runners.current_rows[i]['age'])
+        runner_speed = float(runner_tracking.current_rows[i]['average_speed'])
+        for j in range(1, len(chart_data['x'])):
+            if runner_age > chart_data['x'][j - 1] and runner_age < chart_data['x'][j]:
+                # If the first element simply add
+                if chart_data['y'][j - 1] == 0:
+                    chart_data['y'][j - 1] += int(runner_speed)
+                # Else average the new addition to the age group
+                else:
+                    average = (chart_data['y'][j - 1] + runner_speed) / 2
+                    chart_data['y'][j - 1] = average
+
+    return json.dumps(chart_data);
+
+
+
+
 @index_api.route('/get_scatter_plot_data')
 def get_scatter_plot_data():
     colors = ['#FBB735','#E98931','#EB403B','#B32E37','#6C2A6A','#5C4399','#274389','#1FSEA8','#227FBO','#2ABOC5','#39COB3']
@@ -51,9 +83,10 @@ def get_scatter_plot_data():
 
     for runner in runners:
         if runner['weight'] is not None and runner['height'] is not None and runner['birth_year'] is not None:
-            traces[int(runner['cluster'])]['x'].append(runner['weight'])
-            traces[int(runner['cluster'])]['y'].append(runner['height'])
-            traces[int(runner['cluster'])]['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"]))),
+            cluster = runner['cluster'] if runner['cluster'] is not None else '0'
+            traces[int(cluster)]['x'].append(runner['weight'])
+            traces[int(cluster)]['y'].append(runner['height'])
+            traces[int(cluster)]['z'].append(today.year - runner["birth_year"] - ((today.month, today.day) < (runner["birth_month"], runner["birth_day"]))),
 
     return json.dumps(traces)
 

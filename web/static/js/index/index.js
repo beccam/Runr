@@ -503,8 +503,77 @@ function load_scatter_plot(element)
 });
 }
 
+function load_bar_chart(element)
+{
+    $.ajax({
+    url: '/get_bar_graph_data',
+    success: function (data) {
+        var parsedData = JSON.parse(data)
+        var data = [{
+            x: [],
+            y: parsedData.y,
+            type: 'bar'
+        }];
+        for(var i = 1; i < parsedData.x.length; i++)
+        {
+            data[0].x.push(parsedData.x[i - 1] + "-" + parsedData.x[i]);
+        }
+        console.log(data)
+        var layout = {
+            xaxis: {tickfont: {
+                size: 10,
+                color: '#ffffff'
+            }},
+            yaxis: {
+                titlefont: {
+                    color: '#ffffff'
+                },
+                tickfont: {
+                    size: 10,
+                    color: '#ffffff'
+                },
+            },
+            //
+            margin: {
+                l: 20,
+                r: 20,
+                b: 20,
+                t: 20
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+        };
+        Plotly.newPlot(element, data,layout);
+    }
+});
+}
+$('#chartCarousel').on('slid', function() {
+    if($("#scatterChartView").hasClass("active"))
+    {
+        console.log("scatter")
+        load_scatter_plot('scatterChart');
+    }
+    else if($("#barChartView").hasClass("active"))
+    {
+        console.log("bar")
+        load_bar_chart('barChart');
+    }
+})
+$('#expandedCarousel').on('slid', function() {
+    if($("#expandedScatterChartView").hasClass("active"))
+    {
+        console.log("scatter")
+        load_scatter_plot('expandedScatterPlot');
+    }
+    else if($("#expandedBarChartView").hasClass("active"))
+    {
+        console.log("bar")
+        load_bar_chart('expandedBarChart');
+    }
+})
 
 $("#expandChart").click(function () {
     $("#expandedChartView").toggle();
     load_scatter_plot('expandedScatterPlot');
+
 })

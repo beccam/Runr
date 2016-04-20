@@ -13,6 +13,7 @@ object calculate_position {
     val conf = new SparkConf()
       .setMaster("local[4]")
       .setAppName("calculate-position")
+      .set("spark.cores.max", "50")
       .set("spark.cassandra.connection.host", "127.0.0.1")
 
 

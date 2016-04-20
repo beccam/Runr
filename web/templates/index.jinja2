@@ -76,9 +76,20 @@
 
         }
 
-        .info-tooltip + .tooltip > .tooltip-inner {background-color: #4A4A4A; width:300px;}
-        .info-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#4A4A4A; }
-
+        .info-popover + .popover > .popover-title {
+            background-color: #4A4A4A;
+            color:white;
+            border-color:#4A4A4A}
+        .info-popover + .popover  {
+            background-color: #4A4A4A;
+            width:300px;
+        }
+        .popover-content
+        {
+            background-color: #4A4A4A;
+            color:white;
+            text-align: center;
+        }
     </style>
 
     <body>
@@ -86,27 +97,29 @@
         <div class="container-fluid" style="padding-top:7px">
             <div class="row">
                 <div class="col-md-1 col-xs-2 col-sm-3 ">
-                    <img class="info-tooltip"
+                    <img class="info-popover"
                         style="padding-left: 5px; padding-top:-2px;height:35px"
                         src="static/img/Runr_logo.png"
-                        data-toggle="tooltip"
+                        data-toggle="popover"
                         data-placement="bottom"
-                        title="DSE Runr is a sample cloud application built for tracking runners in a marathon. Different parts of this app will show how a cloud application can leverage DataStax Enterprise as the data management layer of choice."/>
+                        title="Runr is a sample cloud application built for tracking runners in a marathon. <br/><br/>Different parts of this app will show how a cloud application can leverage DataStax Enterprise as the data management layer of choice."
+                        data-content=""/>
                 </div>
                 <div class="col-md-2 col-xs-2 col-xs-offset-3 col-md-offset-4 " style="padding:3px"/>
                     <div>
-                       <b style="color:white; font-size:1.5em" id="timerText" class="info-tooltip"
-                           data-toggle="tooltip"
+                       <b style="color:white; font-size:1.5em" id="timerText" class="info-popover"
+                           data-toggle="popover"
                            data-placement="bottom"
-                           title="The clock represents the race time from when the simulation began. On the backend of the cloud app, there is a recurring DSE Analytics job occuring that simulates just over 10,000 runners moving along the race course. Every second the runners location is updated based on an algorithm that determines their pace."></b>
+                           title="The clock represents the time of the race since the simulation began. <br/><br/>The race simulation is powered by a recurring DSE Analytics job that simulates just over 10,000 runners moving along the race course. <br/><br/>Every second the runners location is updated based on an algorithm that determines their pace."
+                           data-content="<div><a style='color:white' href='https://github.com/datastax-demos/Runr/blob/master/calculate-position/src/main/java/calculate_position.scala'>Check this out on GitHub!</a></div>" ></b>
                     </div>
                 </div>
                 <div class=" col-md-2">
                     <b style="color:white; font-size:1.4em; vertical-align: middle;">Tooltips:</b>
                     <input id="toolTipToggle" type="checkbox" checked data-toggle="toggle" data-size="Normal">
                 </div>
-                <div class="col-md-2 col-xs-4 col-xs-offset-1 info-tooltip" style="padding:1px"
-                       data-toggle="tooltip"
+                <div class="col-md-2 col-xs-4 col-xs-offset-1 info-popover" style="padding:1px"
+                       data-toggle="popover"
                        data-placement="bottom"
                        title="Being able to search data is a key component of a cloud application. DSE Search enables users to search for runners using type ahead functionality.">
                     <select id="runnerSearch" style="width:100%; ">
@@ -123,8 +136,8 @@
             <div class="container">
                 <div class="row">
 
-                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 info-tooltip"
-                           data-toggle="tooltip"
+                    <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all" class="col-md-2 info-popover"
+                           data-toggle="popover"
                            data-placement="bottom"
                            title="Here the user can see basic information about the runner they have selected, being powered by standard transactional queries of DSE Core (Cassandra). An example is: SELECT cluster,weight, height, birth_year, birth_month, birth_day FROM runr.runners">
                         <img style="width:50px; height:50px;margin:10px; float:left" src="static/img/owl.png"/>
@@ -163,52 +176,60 @@
                          class="col-md-8 col-md-offset-3">
                         <div style="padding: 10px; height: 100%">
                             <div id="expandedCarousel" style="height: 100%" class="carousel slide" data-ride="carousel">
-
+                              <ol class="carousel-indicators">
+                                <li data-target="#expandedCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#expandedCarousel" data-slide-to="1"></li>
+                              </ol>
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" style="height: 100%" role="listbox">
-                                    <div class="item active" style="height: 100%">
+                                    <div id="expandedScatterChartView" class="item active" style="height: 100%">
                                         <div id="expandedScatterPlot" style="height: 100%"></div>
+                                    </div>
+                                    <div id="expandedBarChartView" class="item" style="height: 100%">
+                                        <div id="expandedBarChart" style="height: 100%"></div>
                                     </div>
                                 </div>
 
                                 <!-- Controls -->
-                                <a class="left carousel-control" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                                  <a class="left carousel-control expandedChartCarousel" href="#expandedCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                  </a>
+                                  <a class="right carousel-control expandedChartCarousel" href="#expandedCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                  </a>
                             </div>
                         </div>
                     </div>
                     <div style="background-color:#4A4A4A; border-radius:4px; pointer-events: all; position: fixed;bottom: 10px;left:15px"
                          class="col-md-2 ">
                         <div style="color:white;padding: 5px; height:175px">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <div id="chartCarousel" class="carousel slide" data-ride="carousel">
+                                  <!-- Indicators -->
+                                  <ol class="carousel-indicators">
+                                    <li data-target="#chartCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#chartCarousel" data-slide-to="1"></li>
+                                  </ol>
 
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner">
+                                    <div id="scatterChartView" class="item active">
+                                      <div id="scatterChart" style="height: 175px;"></div>
 
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        {#                                  <div class="carousel-caption">#}
-                                        <div id="scatterChart" style="height: 175px;"></div>
-                                        {#                                  </div>#}
                                     </div>
-                                </div>
+                                    <div id="barChartView" class="item">
+                                      <div id="barChart" style="height: 175px;"></div>
+                                    </div>
+                                  </div>
 
-                                <!-- Controls -->
-                                <a class="left carousel-control" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
+                                  <!-- Controls -->
+                                  <a class="left carousel-control smallChartCarousel" href="#chartCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                  </a>
+                                  <a class="right carousel-control smallChartCarousel" href="#chartCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                  </a>
+                                </div> <!-- Carousel -->
                             <div style="float: none; ">
                                 <button id="expandChart" style="margin:5px" class="btn btn-default btn-xs pull-right">
                                     <small><span class="glyphicon glyphicon-new-window"></span></small>
@@ -237,17 +258,39 @@
         setInterval(updateClusterMarkers, 1500)
         var runners_table;
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip('enable');
+            $('[data-toggle="popover"]')
+                    .popover({
+                        trigger: 'manual',
+                        html: true,
+                        animation: false,
+                    })
+                    .on("mouseenter", function () {
+                        var _this = this;
+                        $(this).popover("show");
+                        $(".popover").on("mouseleave", function () {
+                            $(_this).popover('hide');
+                        });
+                    }).on("mouseleave", function () {
+                        var _this = this;
+                        setTimeout(function () {
+                            if (!$(".popover:hover").length) {
+                                $(_this).popover("hide");
+                            }
+                        }, 300);
+                    });
             $('#toolTipToggle').change(function() {
                 if ($(this).prop('checked') == true) {
                     $("#clusterDescription").css('visibility', 'visible');
-                    $('[data-toggle="tooltip"]').tooltip('enable');
+                    $('[data-toggle="popover"]').popover('enable');
                 }
                 else {
                     $("#clusterDescription").css('visibility', 'hidden');
-                    $('[data-toggle="tooltip"]').tooltip('disable');
+                    $('[data-toggle="popover"]').popover('disable');
                 }
             })
+            $('.carousel').carousel({
+                interval: false
+            });
         });
     </script>
 

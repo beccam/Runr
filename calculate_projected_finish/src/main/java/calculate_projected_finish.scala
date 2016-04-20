@@ -14,6 +14,7 @@ object calculate_projected_finish {
     val conf = new SparkConf()
       .setMaster("local[4]")
       .setAppName("calculate-projected_finish")
+      .set("spark.cores.max", "5")
       .set("spark.cassandra.connection.host", "127.0.0.1")
 
 
